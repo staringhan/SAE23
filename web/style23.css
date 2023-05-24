@@ -1,0 +1,501 @@
+/* --------------------------PRINCIPAL-------------------------------------*/
+@import url('http://fonts.cdnfonts.com/css/gilroy-bold');
+
+*{                            
+	padding: 0px;
+	color: white;
+	font-family: 'Gilroy-Medium', sans-serif;
+	text-decoration: none;
+	
+	box-sizing: border-box;
+
+}
+
+body{
+	margin: 0;
+	font-size: 12px;
+	text-align: left;
+
+	background-color: #02583f;
+	background-image: linear-gradient(180deg, #02583f 0%, #525254 100%);
+
+
+}
+ol ol li{ 
+	list-style: circle;
+}
+
+ol li{
+	font-size: 35px;
+	
+}
+main{
+	animation: entrée 1s;
+}
+
+@keyframes entrée {   /*animation de zoom entrant*/
+  0% {
+    transform: scale(0.8);
+    
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* --------------------------PRINCIPAL------------------------------------- */
+
+
+/* --------------------------NAVBAR------------------------------------- */
+
+label.Name{				/*style du logo DANIEL HALIDI*/
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding:0 50px;
+	letter-spacing: 3px;
+	font-weight:bold ;
+	
+}
+
+
+
+
+header{ 				/*style du header*/
+	 position: fixed;
+	 background-color: #011813;
+	 background-image: linear-gradient(91deg, #011813 0%, #303031 100%);
+	 padding-left: 15px;
+	 padding-right: 15px;
+	 margin-top: 0px;
+	 height: 80px;
+	 width: 100%;
+	 top: 0;
+	 border-collapse: collapse;
+	 animation: nav-load 1s;
+	 z-index: 2;  /*permet de faire passer le header devant les autres elements*/
+}
+
+nav{				/*style de la navbar*/
+	width: 100%;
+	top: 0;
+	position: fixed;
+	right: 0;
+
+}
+
+nav ul{
+	float: right;
+	display: flex;
+	margin: 0;
+	margin-right: 45px ;
+}
+
+nav ul li{
+	display: inline-block;
+	line-height: 80px ;
+	margin: 0 5px ;
+}
+
+nav ul li a{
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	font-weight: bold ;
+	text-transform: uppercase;
+}
+
+nav ul li a:hover{				/*style du hover des liens de la navbar */
+background-color: #02b958;
+background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
+
+transition: .5s ;
+}
+
+.current{						/*colorer l'onglet actif */
+	background-color: #02b958;
+    background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
+
+}
+
+
+
+@keyframes nav-load{			/*animation de la navbar*/
+	0%{
+		transform: translateY(-100%);
+	}
+
+	100%{
+			transform: translateY(0%);
+	}
+}
+
+
+
+/* --------------------------NAVBAR------------------------------------- */
+
+/* --------------------------TITRES------------------------------------- */
+
+h1{
+	font-size: 40px;
+	padding-top: 60px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-transform: uppercase;  /* transformer automatiquement les caractères en maj*/
+	text-align: center;
+	animation:flou .8s ;
+	font-family: 'Gilroy-Bold', sans-serif;
+}
+dt{
+	font-size: 30px;
+}
+@keyframes flou {            /*animation pour effet de flou*/
+  0% {
+    letter-spacing: 15px;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+h2{
+	text-align: left;
+	font-size: 35px;
+}
+
+h3{
+	text-align: center;
+	font-size: 30px;
+  	margin-top: 10px;
+  	margin-bottom: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+ul h3{
+	color:white;
+}
+
+
+h5{
+	text-align: left;
+	font-weight: lighter;
+	font-size: 17px;
+}
+
+h6{
+	text-align: center;
+	font-size: 20px;
+}
+
+dd{
+	font-size: 20px;
+}
+/* --------------------------TITRES------------------------------------- */
+
+/* --------------------------SECTIONS------------------------------------- */
+section{
+  margin: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;  /*arrondir les bords de la section*/
+  padding: 20px;
+}
+
+.TITRE{
+	margin-top: 20px;
+	margin-bottom: 40px;
+	background-color:transparent ;
+}
+
+section p{
+	font-size: 20px;
+	line-height: 1.5;
+	text-align: justify;
+	word-spacing: -2px;
+	padding-top: 20px;
+	padding-right: 25px;
+	padding-left: 25px;
+	padding-bottom: 10px;
+
+}
+
+.global{			/*style des elements la section globale */
+	display: flex;
+	padding: 20px;
+	margin: 40px;
+	}
+
+.global video{      /*style de la video dans la secrion globale*/
+	height: 20%;
+	border-radius: 5px;
+	margin: auto;
+
+}
+
+.global p{
+	color: white;
+	margin-right: 25px;
+	text-align: justify;
+	font-size: 20px;
+	line-height: 1.5;
+}
+section.texte p{
+	margin: 40px;
+	line-height: 1.5;
+}
+
+section.texte h3{
+	margin-top: 30px;
+}
+
+ section a:visited{
+ 	color: rgb(200, 200, 200);
+ }
+ 
+
+
+ /*-----------------FOOTER------------------------------------------*/
+
+footer{
+	position: relative;
+	background-color: #011813;
+	background-image: linear-gradient(91deg, #011813 0%, #303031 100%);
+	padding: 0;
+
+}
+
+footer ul{
+	margin-top: 5%;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+	line-height: 1.6;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+footer ul li{
+	display: inline-block;
+	padding: 0 15px;
+	margin-top: 3%;
+
+}
+
+footer ul li a{
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-align: center;
+	display: flex;
+	font-weight: bold ;
+	text-transform: uppercase;
+}
+
+footer ul li a:hover{
+	background-color: #02b958;
+    background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
+
+	transition: .5s ;
+}
+
+
+footer p{
+	text-align: center;
+	font-size: 13px;
+}
+
+img.validator{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.pc{
+	border-radius: 20px;
+	margin: auto;
+}
+
+
+.side-menu{
+	display: none;
+}
+ 
+/*---------------------------------RESPONSIVE-------------------------------------*/
+@media screen and ( max-width: 1090px ){
+	label.Name{
+		display: none;
+	}
+
+	.global {
+		flex-direction: column-reverse;  
+	}
+
+
+	nav ul {
+		margin-right: 20%;
+		}
+
+
+	nav ul li a{
+		padding: 3px 3px;
+	}
+}
+
+
+@media screen and (max-width: 690px) { 
+
+	label.Name{
+		display: initial;
+		padding: 0;
+		font-size: 25px;
+		letter-spacing: 0;
+		margin-left: auto;
+		margin-right: auto;	
+	}
+
+	nav{		/*disposition de menu navbar en colonne */
+    height: 100%;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+   	overflow: hidden;
+  
+}
+
+	nav ul{
+		flex-direction: column;
+		float: none;
+		text-align: center;
+		padding-top: 45%;
+		padding-left: 10%;
+}
+
+	nav ul li a{
+    display: block;
+    padding: 0;
+    color: rgb(255, 255, 255);
+}
+ 	nav ul li a:hover{
+    background-color: rgb(244, 244, 244);
+}
+ 	nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+	.global{	
+	background-color: transparent;
+	width: 100%;
+	margin: auto;
+	}
+
+
+	.global img{
+	display: none;
+}
+
+	.global h3{
+	margin: 0;
+	color: white;
+}
+
+	.global p{
+	text-align: left;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+	section{
+	margin: 10px;
+}
+
+	section.texte{
+		margin: 0px;
+	}
+
+	section.texte p{
+	text-align: justify;
+	word-break: break-all;
+	margin: 1px;
+	line-height: 1.5;
+}
+
+	section.texte h3{
+	margin-top: 30px;
+}
+ 
+ h5{
+ 	font-size: 20px;
+ }
+
+ a{
+ 	word-break: break-all;
+ }
+
+
+/* Icone du menu */
+.hamb{
+	cursor: pointer;
+    z-index: 5;
+    float: right;
+    padding: 40px 40px;
+}
+
+
+
+.hamb-line {
+    background: rgb(255, 255, 255); /*ligne du milieu*/
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 24px;
+} 
+
+/* Style de l'icone (lignes du menu hamburger) */
+.hamb-line::before,
+.hamb-line::after{
+    background: rgb(255, 255, 255);/*lignes du haut et du bas*/
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {      /* Checkbox non apparente*/
+    display: none;
+  }
+
+/* Une fois que l'on clique sur l'icone */
+.side-menu:checked ~ nav{  /* afficher la navbar*/
+    max-height: 100%;
+    padding: 0px;
+    z-index: -1;
+}
+
+
+.side-menu:checked ~ .hamb .hamb-line {  /*la ligne du milieu devient transparente*/
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before { /*la première ligne forme une croix*/
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after { /*la troisieme ligne forme une croix*/
+    transform: rotate(45deg);
+    top:0;
+}
+
+}
