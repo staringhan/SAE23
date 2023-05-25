@@ -1,0 +1,63 @@
+*{
+	color: white;
+}
+
+
+table{
+	width: 800px;
+	margin: auto;
+	top: 100px;
+	border-width: 2px;
+	border-collapse: collapse;
+
+}
+
+caption{
+	background-color: #353535;
+	color: white;
+	font-style: normal;
+	font-size: 18px;
+	height: 50px;
+	text-align: center;
+	font-weight: bold;
+	border-collapse:collapse;
+	padding-top: 15px;
+}
+th{
+background-color: #7C7C7C;
+	color: white;
+	font-style: normal;
+	font-size: 15px;
+	height:30px;
+	text-align:center;
+	font-weight:bold;
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding-bottom: 10px;
+	padding-top: 10px;	
+}
+td{
+	height: 50px;
+	text-align: center;
+	border: 1px solid black;
+	border-collapse:collapse;
+	text-indent: 11px;
+}
+td.td1{
+	width:150px;
+	height: 15px;
+	text-align: right	
+}
+
+td a :hover, td a :visited {
+	color: white;
+}
+
+@media screen and (max-width: 1080px ){
+	table{
+		width: 50%;
+		height: 300px;
+	}
+	th{
+		height: 1%;
+		}	}
