@@ -41,8 +41,10 @@
     <p>En tant que professionnels R&T, Ce site dynamique nous permet de recenser les données récupérées par différents capteurs présents dans les batiments de l'IUT de Blagnac. Ainsi, les administrateurs pourront être amenés à gérer et traiter ces données structurées. </p>
 </section >
 
-
+<section>
+<h3> Batiments </h3>
 <?php
+
 #basic html page with a table with 3 columns and n rows named "salle", "capteurs" and "valeurs"
 #connect to the database
 include 'connect.php';
@@ -61,6 +63,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 ?>
 
+</section>
 </main>
 
 <footer>
