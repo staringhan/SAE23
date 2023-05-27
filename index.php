@@ -13,22 +13,23 @@
 </head>
 
 <body>
-	<header>
+    <header>
 
-		<label class="Name">SAE 23</label>
-		<input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>	
-		
-	<nav> 
+        <label class="Name">SAE 23</label>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label> 
+        
+    <nav> 
         
 
         <ul>
             <li><a class="current" href="#">Accueil</a></li>
-            <li><a href="connexion.html">Connexion</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
         </ul>
         
     </nav>
-	</header>
+    </header>
 
 <main>
 
@@ -43,7 +44,9 @@
 
 <section>
     <h3> Batiments </h3>
+
     <?php
+    session_start();
     
     #basic html page with a table with 3 columns and n rows named "salle", "capteurs" and "valeurs"
     #connect to the database
@@ -75,12 +78,17 @@
             <a href="https://www.iut-blagnac.fr/fr/" target="_blank">Iut de Blagnac</a>
         </li>
         <li>
-            <a href="https://www.iut-blagnac.fr/fr/formations/but-rt" target="_blank">Etudiant en R&T</a>
+            <a href="https://www.iut-blagnac.fr/fr/formations/but-rt" target="_blank">Etudiants en R&T</a>
         </li>
         <li>
-            <a href="mailto:daniel.halidi.iut@gmail.com">Contact</a>
+            <a href="https://github.com/staringhan/SAE23">GitHub</a>
         </li>
     </ul>
+
+<p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
+    <p class="Validator">Validation HTML5</p> 
+    <a href="#" target="_blank"><img class="validator" src="./media/htmllogo.png" alt="HTML 5 Valide"></a>
+    <a href="#" target="_blank"><img class="validator" src="./media/csslogo.png" alt="CSS 3 Valide"></a>
 
     
 </footer>
