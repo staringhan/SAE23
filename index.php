@@ -46,7 +46,6 @@
     <h3> Batiments </h3>
 
     <?php
-    session_start();
     
     #basic html page with a table with 3 columns and n rows named "salle", "capteurs" and "valeurs"
     #connect to the database
