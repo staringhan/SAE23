@@ -4,7 +4,7 @@
 while true 
 do
 
-cap_pres= echo "SELECT * FROM sae23db.capteurs;" | mysql -h "192.168.195.6" -u "root3" -p"root3" -D "sae23db"
+cap_pres= echo "SELECT \`ID-cap\` FROM sae23db.capteurs;" | mysql -h "192.168.195.6" -u "root3" -p"root3" -D "sae23db"
 echo $cap_pres
 
 for i in $cap_pres
