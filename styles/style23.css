@@ -63,12 +63,24 @@ fieldset{
 
 section.form{
 	margin: auto;
+	width: 50%;
+	
 }
 
+section.batiment{
+	margin: auto;
+	margin-bottom: 10px;
+	width: 50%;
+}
 legend.form{
 	font-size: 20px;
 	text-align: center;
 	margin: auto;
+}
+
+select{
+	background-color: #303031;
+	width: 100%;
 }
 /* --------------------------FORMULAIRE------------------------------------- */
 
@@ -200,21 +212,30 @@ h2{
 .valid{
 	background-color: transparent;
 	margin: auto;
+	text-align: center;
+
 
 }
 
 input{
 	font-size: 16px;
 	height: 20px;
-	background-color:rgba(35, 35, 35, 0.824);
+	background-color:transparent;
 	width: 100%;
 	text-align: center;
-	border-radius: 20px;
+	border-radius: 5px;
+	
 }
 
 input.valider{
-	height: auto;
+	height: 40px;
+	border-radius: 2%;
+	width: 50%;
+	border: none;
+	background-color: #02b958;
+    background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
 }
+
 
 .hautpage{
 	
@@ -228,7 +249,7 @@ input[type=text] {
   }
   
   input[type=text]:focus {
-	width: 100%;
+	width: 80%;
   }
 
 legend{
