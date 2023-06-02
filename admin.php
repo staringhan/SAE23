@@ -50,14 +50,12 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
         <form action="./scripts_php/ajout_batiments.php" method="post" enctype="multipart/form-data" >
             <section class="batiment">
                 
-                    <input type="radio" id="A" name="ID_bat" value="A" class="radio-input">
-                    <label for="A" class="nomBAT">Batiment A</label><br>
-                    <input type="radio" id="B" name="ID_bat" value="B" class="radio-input">
-                    <label for="B" class="nomBAT">Batiment B</label><br>
-                    <input type="radio" id="C" name="ID_bat" value="C" class="radio-input">
-                    <label for="C" class="nomBAT">Batiment C</label><br>
-                    <input type="radio" id="D" name="ID_bat" value="D" class="radio-input">
-                    <label for="D" class="nomBAT">Batiment D</label><br>
+                <select id="ID_bat" name="ID_bat">
+                    <option value="A">Batiment A</option>
+                    <option value="B">Batiment B</option>
+                    <option value="C">Batiment C</option>
+                    <option value="D">Batiment D</option>
+                  </select>
             </section>
 
         <section class="form">
@@ -79,33 +77,21 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
 
     <section class="admin">
-
+        <legend class="form">Choissisez le bâtiment que vous souhaitez supprimer</legend>
         <form action="#" method="post" enctype="multipart/form-data">
-            <fieldset class="batiment">
-                <legend>Choissisez le bâtiment que vous souhaitez supprimer</legend>
-    
-                    <input type="radio" id="A" name="bat_add" value="Batiment A" class="radio-input">
-                    <label for="A" class="nomBAT">Batiment A</label><br>
-                    <input type="radio" id="B" name="bat_add" value="Batiment B" class="radio-input">
-                    <label for="B" class="nomBAT">Batiment B</label><br>
-                    <input type="radio" id="C" name="bat_add" value="Batiment C" class="radio-input">
-                    <label for="C" class="nomBAT">Batiment C</label><br>
-                    <input type="radio" id="D" name="bat_add" value="Batiment D" class="radio-input">
-                    <label for="D" class="nomBAT">Batiment D</label><br>
-            </fieldset>
-            
-                <label for="nom">Nom du batiment</label><br>
-                <input type="text" id="nom" name="nom" value=""><br>
+            <section class="batiment">
+                
+                <select id="ID_bat" name="ID_bat">
+                    <option value="A">Batiment A</option>
+                    <option value="B">Batiment B</option>
+                    <option value="C">Batiment C</option>
+                    <option value="D">Batiment D</option>
+                    <option value="E">Batiment E</option>
+                  </select>
+            </section>
 
-                <label for="login">Login</label><br>
-                <input type="text" id="login" name="login" value=""><br>
-
-                <label for="nom">Password</label><br>
-                <input type="text" id="mdp" name="mdp" value=""><br>
-
-            
             <section class="valid">
-                <input type="submit" value="Valider" />
+                <input type="submit" value="Valider" class="valider" />
             </section>
         </form>
     
@@ -120,39 +106,46 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 <section class="admin">
 
     <form action="#" method="post" enctype="multipart/form-data">
-        <fieldset class="batiment">
-            <legend>Choissisez le capteur que vous souhaitez ajouter</legend>
-                <input type="radio" id="A" name="bat_add" value="Batiment A" class="radio-input">
-                <label for="A" class="nomBAT">Batiment A</label><br>
-                <input type="radio" id="B" name="bat_add" value="Batiment B" class="radio-input">
-                <label for="B" class="nomBAT">Batiment B</label><br>
-                <input type="radio" id="C" name="bat_add" value="Batiment C" class="radio-input">
-                <label for="C" class="nomBAT">Batiment C</label><br>
-                <input type="radio" id="D" name="bat_add" value="Batiment D" class="radio-input">
-                <label for="D" class="nomBAT">Batiment D</label><br>
-        </fieldset>
+        
+            <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
+            <section class="batiment">
+                
+                <select id="ID_cap" name="ID_bat">
+                    <option value="A">Capteur 1 </option>
+                    <option value="B">Capteur 2</option>
+                    <option value="C">Capteur 3</option>
+                    <option value="D">Capteur 4</option>
+                  </select>
+            </section>
 
-        <section class="valid">
-            <input type="submit" value="Valider" />
+        <section class="form">
+                <label for="nom" class="texte">Nom du capteur</label><br>
+                <input type="text" id="nom" name="nom" value=""><br>
+
+                <label for="login" class="texte">Type</label><br>
+                <input type="text" id="login" name="login" value=""><br>
+
         </section>
-    </form>
-
+            <section class="valid">
+                <input type="submit" value="Valider" class="valider" />
+            </section>
+        </form>
 </section>
 
 <section class="admin">
 
     <form action="#" method="post" enctype="multipart/form-data">
-        <fieldset class="batiment">
-            <legend>Choissisez le capteur que vous souhaitez supprimer</legend>
-                <input type="radio" id="A" name="bat_add" value="Batiment A" class="radio-input">
-                <label for="A" class="nomBAT">Batiment A</label><br>
-                <input type="radio" id="B" name="bat_add" value="Batiment B" class="radio-input">
-                <label for="B" class="nomBAT">Batiment B</label><br>
-                <input type="radio" id="C" name="bat_add" value="Batiment C" class="radio-input">
-                <label for="C" class="nomBAT">Batiment C</label><br>
-                <input type="radio" id="D" name="bat_add" value="Batiment D" class="radio-input">
-                <label for="D" class="nomBAT">Batiment D</label><br>
-        </fieldset>
+        
+            <legend class="form">Choissisez le capteur que vous souhaitez supprimer</legend>
+            <section class="batiment">
+                
+                <select id="ID_cap" name="ID_bat">
+                    <option value="A">Capteur 1</option>
+                    <option value="B">Capteur 2</option>
+                    <option value="C">Capteur 3</option>
+                    <option value="D">Capteur 4</option>
+                  </select>
+            </section>
 
         <section class="valid">
             <input type="submit" value="Valider" />
