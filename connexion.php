@@ -36,6 +36,9 @@ if (isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire'] === true) {
         <li><a href="index.php">Accueil</a></li>
         <li><a href="consultation.html">Consultation</a></li>
         <li><a class="current" href="#">Connexion</a></li>
+        <li><a href="admin.php">Admin</a></li>
+        <li><a href="gestion.html">Gestion</a></li>
+
       </ul>
     </nav>
 

@@ -43,7 +43,7 @@
 </section >
 
 <section>
-    <h3> Batiments </h3>
+    <h3>Voici les bâtiments gérés </h3>
 
     <?php
     

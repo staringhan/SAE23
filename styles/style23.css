@@ -83,6 +83,7 @@ nav{				/*style de la navbar*/
 	position: fixed;
 	right: 0;
 
+
 }
 
 nav ul{
@@ -164,10 +165,24 @@ dt{
 }
 
 h2{
-	text-align: left;
-	font-size: 35px;
+	text-align: center;
+	font-size: 30px;
+	
 }
 
+.valid{
+	background-color: transparent;
+	margin: auto;
+
+}
+
+input{
+	font-size: 15px;
+	background-color: green;
+	width: 50%;
+	text-align: center;
+	border-radius: 20px;
+}
 h3{
 	text-align: center;
 	font-size: 30px;
@@ -181,6 +196,10 @@ ul h3{
 	color:white;
 }
 
+.hautpage{
+	
+	margin-top: 15%;
+}
 
 h5{
 	text-align: left;
@@ -212,6 +231,11 @@ section{
 	background-color:transparent ;
 }
 
+.TITREBAS{
+	padding: initial;
+	background-color:transparent ;
+}
+
 section p{
 	font-size: 20px;
 	line-height: 1.5;
@@ -224,29 +248,11 @@ section p{
 
 }
 
-.global{			/*style des elements la section globale */
-	display: flex;
-	padding: 20px;
-	margin: 40px;
-	}
-
-.global video{      /*style de la video dans la secrion globale*/
-	height: 20%;
-	border-radius: 5px;
-	margin: auto;
-
-}
-
-.global p{
-	color: white;
-	margin-right: 25px;
-	text-align: justify;
-	font-size: 20px;
-	line-height: 1.5;
-}
-section.texte p{
-	margin: 40px;
-	line-height: 1.5;
+.admin{
+	width: 50%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 
 section.texte h3{
@@ -316,10 +322,6 @@ img.validator{
 	margin-right: auto;
 }
 
-img.pc{
-	border-radius: 20px;
-	margin: auto;
-}
 
 
 .side-menu{
