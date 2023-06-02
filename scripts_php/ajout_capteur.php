@@ -10,7 +10,7 @@ $nom = $_POST['nom'];
 $IDbat = $_POST['ID-bat'];
 
 //insert in the table
-$sql = "INSERT INTO capteur (ID_cap, nom, ID_bat) VALUES ('$IDcap', '$nom', '$IDbat')";
+$sql = "INSERT INTO capteur (`ID-cap`, nom, ID_bat) VALUES ('$IDcap', '$nom', '$IDbat')";
 $result = $conn->query($sql);
 
 

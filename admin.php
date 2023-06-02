@@ -47,16 +47,16 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
     <section class="admin">
         <legend class="form">Choissisez le bâtiment que vous souhaitez ajouter</legend>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="./scripts_php/ajout_batiments.php" method="post" enctype="multipart/form-data" >
             <section class="batiment">
                 
-                    <input type="radio" id="A" name="bat_add" value="Batiment A" class="radio-input">
+                    <input type="radio" id="A" name="ID_bat" value="A" class="radio-input">
                     <label for="A" class="nomBAT">Batiment A</label><br>
-                    <input type="radio" id="B" name="bat_add" value="Batiment B" class="radio-input">
+                    <input type="radio" id="B" name="ID_bat" value="B" class="radio-input">
                     <label for="B" class="nomBAT">Batiment B</label><br>
-                    <input type="radio" id="C" name="bat_add" value="Batiment C" class="radio-input">
+                    <input type="radio" id="C" name="ID_bat" value="C" class="radio-input">
                     <label for="C" class="nomBAT">Batiment C</label><br>
-                    <input type="radio" id="D" name="bat_add" value="Batiment D" class="radio-input">
+                    <input type="radio" id="D" name="ID_bat" value="D" class="radio-input">
                     <label for="D" class="nomBAT">Batiment D</label><br>
             </section>
 
