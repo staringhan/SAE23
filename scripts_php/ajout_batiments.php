@@ -1,5 +1,5 @@
 <?php
-// Simple adding og buildings to the database from a form
+// Simple adding of buildings to the database from a form
 
 
 
