@@ -14,7 +14,9 @@ $mdp = $_POST['mdp'];
 $sql ="INSERT INTO batiment (`ID-bat`, nom, login, mdp) VALUES ('$ID_bat', '$nom', '$login', '$mdp')";
 $result = $con->query($sql);
 
+
 //close the connection
 $con->close();
 
+header('Location: ../admin.php')
 ?>

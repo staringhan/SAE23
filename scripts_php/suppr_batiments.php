@@ -3,14 +3,15 @@
 
 $batiment=$_POST['batiment'];
 // connect to the database
-include 'connect.php';
+include '../connect.php';
 
 //delete the building
-$sql = "DELETE FROM batiment WHERE nom='$batiment'";
-$result = $conn->query($sql);
+$sql = "DELETE FROM batiment WHERE `ID-bat`='$batiment'";
+$result = $con->query($sql);
 
 //close the connection
-$conn->close();
+$con->close();
 
+header('Location: ../admin.php')
 
 ?>

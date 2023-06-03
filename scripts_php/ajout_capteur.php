@@ -2,7 +2,7 @@
 // Simple adding of buildings to the database from a form
 
 // Connect to the database
-include 'connect.php';
+include '../connect.php';
 
 //set the variables, ID-bat, nom, login, mdp
 $IDcap = $_POST['ID-cap'];
@@ -11,11 +11,11 @@ $IDbat = $_POST['ID-bat'];
 
 //insert in the table
 $sql = "INSERT INTO capteur (`ID-cap`, nom, ID_bat) VALUES ('$IDcap', '$nom', '$IDbat')";
-$result = $conn->query($sql);
+$result = $con->query($sql);
 
 
 //close the connection
-$conn->close();
-
+$con->close();
+header('Location: ../admin.php')
 
 ?>
