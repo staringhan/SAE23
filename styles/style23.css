@@ -44,11 +44,12 @@ main{
 }
 /* --------------------------FORMULAIRE------------------------------------- */
 
-.radio-input {
-    float: left;
-    margin-right: 5px; /* Ajoute une marge entre les boutons radio et les labels */
-  }
-
+section.admin{
+	width: 90%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
   label.nomBAT{
 	font-size: 17px;
 }
@@ -57,13 +58,10 @@ label.texte{
 	font-size: 17px;
 }
 
-fieldset{
-	margin:auto;
-}
-
 section.form{
 	margin: auto;
 	width: 50%;
+	text-align: center;
 	
 }
 
@@ -75,12 +73,77 @@ section.batiment{
 legend.form{
 	font-size: 20px;
 	text-align: center;
-	margin: auto;
+	margin-bottom: 20px;
 }
 
 select{
 	background-color: #303031;
 	width: 100%;
+    margin: 0;
+    padding: 5px 1px;        
+	
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+	color: darken(#015413,35%);
+	font-size: 20px;
+	text-align: center;
+}
+
+.valid{
+	background-color: transparent;
+	margin: auto;
+	text-align: center;
+
+
+}
+
+input{
+	font-size: 16px;
+	height: 40px;
+	background-color:transparent;
+	border-radius: 2%;
+	width: 80%;
+	margin: 3%;
+	text-align: center;
+	border-radius: 5px;
+	box-sizing: border-box;
+	
+}
+
+
+
+input.valider{
+	height: 40px;
+	border-radius: 2%;
+	width: 50%;
+	border: none;
+	background-color: #02b958;
+    background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
+	margin-bottom: 0px;
+}
+
+input.valider:hover{
+	background-color: #026f35;
+    background-image: linear-gradient(90deg, #012f16 0%, #5a5a59 100%);
+	cursor: pointer;
+	transition: .2s;
+}
+
+
+
+input[type=text]{
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+
+
+legend{
+	text-align: center;
+	margin-bottom: 10px;
 }
 /* --------------------------FORMULAIRE------------------------------------- */
 
@@ -104,7 +167,6 @@ label.Name{				/*style du logo DANIEL HALIDI*/
 header{ 				/*style du header*/
 	 position: fixed;
 	 background-color: #011813;
-	 background-image: linear-gradient(91deg, #011813 0%, #303031 100%);
 	 padding-left: 15px;
 	 padding-right: 15px;
 	 margin-top: 0px;
@@ -150,6 +212,12 @@ nav ul li a{
 nav ul li a:hover{				/*style du hover des liens de la navbar */
 background-color: #02b958;
 background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
+
+
+
+
+
+
 
 transition: .5s ;
 }
@@ -203,58 +271,12 @@ h1{
   }
 }
 
-h2{
+h2.hautpage{
 	text-align: center;
 	font-size: 30px;
-	
+	margin-top: 7%;
 }
 
-.valid{
-	background-color: transparent;
-	margin: auto;
-	text-align: center;
-
-
-}
-
-input{
-	font-size: 16px;
-	height: 20px;
-	background-color:transparent;
-	width: 100%;
-	text-align: center;
-	border-radius: 5px;
-	
-}
-
-input.valider{
-	height: 40px;
-	border-radius: 2%;
-	width: 50%;
-	border: none;
-	background-color: #02b958;
-    background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
-}
-
-
-.hautpage{
-	
-	margin-top: 15%;
-}
-
-input[type=text] {
-	transition: width 0.4s ease-in-out;
-	font-size: 16px;
-	width: 50%;
-  }
-  
-  input[type=text]:focus {
-	width: 80%;
-  }
-
-legend{
-	text-align: center;
-}
 /* --------------------------TITRES------------------------------------- */
 
 /* --------------------------SECTIONS------------------------------------- */
@@ -265,6 +287,20 @@ section{
   padding: 20px;
 }
 
+.parentG{
+	float: left;
+	clear: none;
+	width: 41%;
+	margin: 5%;
+	
+}
+
+.parentD{
+	float: right;
+	clear: none;
+	width: 39%;
+	margin: 5%;
+}
 .TITRE{
 	margin-top: 20px;
 	margin-bottom: 40px;
@@ -288,12 +324,7 @@ section p{
 
 }
 
-.admin{
-	width: 50%;
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-}
+
 
 
  section a:visited{
@@ -383,6 +414,20 @@ img.validator{
 
 	nav ul li a{
 		padding: 3px 3px;
+	}
+
+	.parentD{
+		margin-top: 10%;
+		float: none;
+		margin: auto;
+		width: 80%;
+	}
+
+	.parentG{
+		margin-top: 5%;
+		float: none;
+		margin: auto;
+		width: 80%;
 	}
 }
 

@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
 <main>
 
-
+<section class="parentG">
     <h2 class="hautpage">Administration des batiments</h2>
 
     <section class="admin">
@@ -59,14 +59,14 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
             </section>
 
         <section class="form">
-                <label for="nom" class="texte">Nom du batiment</label><br>
-                <input type="text" id="nom" name="nom" value=""><br>
+                
+                <input type="text" id="nom" name="nom" placeholder="Nom du batiment"><br>
 
-                <label for="login" class="texte">Login</label><br>
-                <input type="text" id="login" name="login" value=""><br>
+                
+                <input type="text" id="login" name="login" placeholder="Login"><br>
 
-                <label for="nom" class="texte">Password</label><br>
-                <input type="text" id="mdp" name="mdp" value=""><br>
+                
+                <input type="text" id="mdp" name="mdp" placeholder="Password"><br>
         </section>
             <section class="valid">
                 <input type="submit" value="Valider" class="valider" />
@@ -96,11 +96,13 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
         </form>
     
     </section>
-
-
-<section class="TITREBAS">
-    <h2>Administration des capteurs</h2>
 </section>
+
+<section class="parentD">
+
+
+    <h2 class="hautpage">Administration des capteurs</h2>
+
 
 
 <section class="admin">
@@ -108,22 +110,16 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
     <form action="#" method="post" enctype="multipart/form-data">
         
             <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
-            <section class="batiment">
-                
-                <select id="ID_cap" name="ID_bat">
-                    <option value="A">Capteur 1 </option>
-                    <option value="B">Capteur 2</option>
-                    <option value="C">Capteur 3</option>
-                    <option value="D">Capteur 4</option>
-                  </select>
-            </section>
+            
 
         <section class="form">
-                <label for="nom" class="texte">Nom du capteur</label><br>
-                <input type="text" id="nom" name="nom" value=""><br>
 
-                <label for="login" class="texte">Type</label><br>
-                <input type="text" id="login" name="login" value=""><br>
+            
+            <input type="text" id="ID-cap" name="nom" placeholder="ID capteur"><br>
+
+            <input type="text" id="nom" name="login" placeholder="Nom"><br>
+
+            <input type="text" id="ID-bat" name="login" placeholder="ID batiment"><br>
 
         </section>
             <section class="valid">
@@ -137,24 +133,25 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
     <form action="#" method="post" enctype="multipart/form-data">
         
             <legend class="form">Choissisez le capteur que vous souhaitez supprimer</legend>
-            <section class="batiment">
-                
-                <select id="ID_cap" name="ID_bat">
-                    <option value="A">Capteur 1</option>
-                    <option value="B">Capteur 2</option>
-                    <option value="C">Capteur 3</option>
-                    <option value="D">Capteur 4</option>
-                  </select>
-            </section>
+            <section class="form">
+
+                <input type="text" id="ID-cap" name="nom" placeholder="ID capteur"><br>
+
+                <input type="text" id="nom" name="login" placeholder="Nom"><br>
+
+            
+                <input type="text" id="ID-bat" name="login" placeholder="ID batiment"><br>
+
+        </section>
 
         <section class="valid">
-            <input type="submit" value="Valider" />
+            <input type="submit" value="Valider" class="valider" />
         </section>
     </form>
 
 </section>
 
-
+</section>
 
 
 
