@@ -82,13 +82,24 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
         <form action="./scripts_php/suppr_batiments.php" method="post" enctype="multipart/form-data">
             <section class="batiment">
                 
-                <select id="ID_bat" name="batiment">
-                    <option value="A">Batiment A</option>
-                    <option value="B">Batiment B</option>
-                    <option value="C">Batiment C</option>
-                    <option value="D">Batiment D</option>
-                    <option value="E">Batiment E</option>
-                  </select>
+            <?php
+                //connect to the database
+                include 'connect.php';
+                //get the list of the list of existing buildings
+                $sql = "SELECT * FROM batiment";
+                $result = mysqli_query($con, $sql);
+
+                //display the list of the buildings
+                echo "<select id='ID_bat' name='ID_bat'>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    //print building name
+                    echo "<option value='" . $row['ID_batiment'] . "'>" . $row['nom'] . "</option>";
+                }
+                echo "</select>";
+
+
+
+                ?>
             </section>
 
             <section class="valid">
@@ -110,25 +121,26 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
     <form action="./scripts_php/ajout_capteur.php" method="post" enctype="multipart/form-data">
         
-            <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
-            <section class="batiment">
-                
-                <select id="ID_cap" name="ID_cap">
-                    <option value="A">Capteur 1 </option>
-                    <option value="B">Capteur 2</option>
-                    <option value="C">Capteur 3</option>
-                    <option value="D">Capteur 4</option>
-                  </select>
-            </section>
+            
 
         <section class="form">
-
+        <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
             
             <input type="text" id="ID-cap" name="nom" placeholder="ID capteur"><br>
 
             <input type="text" id="nom" name="login" placeholder="Nom"><br>
 
-            <input type="text" id="ID-bat" name="login" placeholder="ID batiment"><br>
+            <section>
+                
+                <select id="ID_bat" name="batiment">
+                    <option value="A">Batiment A</option>
+                    <option value="B">Batiment B</option>
+                    <option value="C">Batiment C</option>
+                    <option value="D">Batiment D</option>
+                    <option value="E">Batiment E</option>
+                  </select>
+            </section>
+
 
         </section>
             <section class="valid">
@@ -143,13 +155,24 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
         
             <legend class="form">Choissisez le capteur que vous souhaitez supprimer</legend>
             <section class="batiment">
-                
-                <select id="ID_cap" name="ID_cap">
-                    <option value="A">Capteur 1</option>
-                    <option value="B">Capteur 2</option>
-                    <option value="C">Capteur 3</option>
-                    <option value="D">Capteur 4</option>
-                  </select>
+                <?php
+                //connect to the database
+                include 'connect.php';
+                //get the list of the sensors
+                $sql = "SELECT * FROM capteurs";
+                $result = mysqli_query($con, $sql);
+            
+                //display the list of the sensors
+                echo "<select id='ID_cap' name='capteur'>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    //prin sensor name
+                    echo "<option value='" . $row['ID_capteur'] . "'>" . $row['nom'] . "</option>";
+                }
+                echo "</select>";
+
+
+
+                ?>
             </section>
 
         <section class="valid">

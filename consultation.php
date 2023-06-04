@@ -53,11 +53,16 @@ if (mysqli_num_rows($result) > 0) {
         echo '<h3>' .$row["nom"]. '</h3>';
         echo '<p>';
         //fetch the last value of each sensor in the building, in a table
-        $sql2="SELECT `mesures`.`valeur`, `mesures`.`date`, `mesures`.`heure`, `mesures`.`Salle`, `capteurs`.`ID-cap`, `batiment`.`nom`
-        FROM `mesures` 
-            LEFT JOIN `capteurs` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap` 
-            LEFT JOIN `batiment` ON `capteurs`.`ID-bat` = `batiment`.`ID-bat`
-            ORDER BY `mesures`.`date` DESC, `mesures`.`heure` DESC";
+        $IDbat = $row["ID-bat"];
+        
+        $sql2 = "SELECT `mesures`.`valeur`, `mesures`.`date`, `mesures`.`heure`, `mesures`.`Salle`, `capteurs`.`ID-cap`, `batiment`.`nom`, `batiment`.`ID-bat`
+                FROM `mesures`
+                LEFT JOIN `capteurs` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap`
+                LEFT JOIN `batiment` ON `capteurs`.`ID-bat` = `batiment`.`ID-bat`
+                WHERE `capteurs`.`ID-bat` = \"$IDbat\"
+                ORDER BY `mesures`.`date` DESC, `mesures`.`heure` DESC
+                LIMIT 1";
+
         $result2 = mysqli_query($con, $sql2);
         if (mysqli_num_rows($result2) > 0) {
             echo '<table>';
