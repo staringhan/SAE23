@@ -1,7 +1,7 @@
 <?php
 // deleting building
 
-$batiment=$_POST['batiment'];
+$batiment=$_POST['ID_bat'];
 // connect to the database
 include '../connect.php';
 
@@ -11,7 +11,7 @@ $result = $con->query($sql);
 
 //close the connection
 $con->close();
+header('Location: ../admin.php');
 
-header('Location: ../admin.php')
 
 ?>

@@ -93,7 +93,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
                 echo "<select id='ID_bat' name='ID_bat'>";
                 while ($row = mysqli_fetch_assoc($result)) {
                     //print building name
-                    echo "<option value='" . $row['ID_batiment'] . "'>" . $row['nom'] . "</option>";
+                    echo "<option value='" . $row['ID-bat'] . "'>" . $row['nom'] . "</option>";
                 }
                 echo "</select>";
 
@@ -166,10 +166,10 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
                 $result = mysqli_query($con, $sql);
             
                 //display the list of the sensors
-                echo "<select id='ID_cap' name='capteur'>";
+                echo "<select id='ID_cap' name='ID_cap'>";
                 while ($row = mysqli_fetch_assoc($result)) {
                     //prin sensor name
-                    echo "<option value='" . $row['ID_capteur'] . "'>" . $row['nom'] . "</option>";
+                    echo "<option value='" . $row['ID-cap'] . "'>" . $row['nom'] . "</option>";
                 }
                 echo "</select>";
 

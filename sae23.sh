@@ -53,6 +53,8 @@ do
             room=$(echo "$data" | jq '.[1].room')
             data_temp=$(echo "$data" | jq '.[0].temperature')
             data_hum=$(echo "$data" | jq '.[0].humidity')
+            data_co2=$(echo "$data" | jq '.[0].co2')
+            data_lum=$(echo "$data" | jq '.[0].luminosity')
 
             echo "Température du capteur $id : $data_temp"
             echo "Humidite du capteur $id : $data_hum"
@@ -65,7 +67,8 @@ do
             echo $timee
             echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Temperature', '$data_temp');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
             echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Humidite', '$data_hum');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
-            
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'CO2', '$data_co2');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Luminosite', '$data_lum');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
 
             clear
 

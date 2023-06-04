@@ -1,7 +1,7 @@
 <?php
 // deleting sensors
 
-$capteur=$_POST['batiment'];
+$capteur=$_POST['ID_cap'];
 // connect to the database
 include '../connect.php';
 
