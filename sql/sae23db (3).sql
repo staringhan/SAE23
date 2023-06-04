@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 02 juin 2023 à 13:19
+-- Généré le : ven. 02 juin 2023 à 17:13
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -52,6 +52,14 @@ CREATE TABLE `batiment` (
   `mdp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `batiment`
+--
+
+INSERT INTO `batiment` (`ID-bat`, `nom`, `login`, `mdp`) VALUES
+('A', 'bata', 'mdma', 'mdma'),
+('E', 'bate', 'batelog', 'batelog');
+
 -- --------------------------------------------------------
 
 --
@@ -61,9 +69,15 @@ CREATE TABLE `batiment` (
 CREATE TABLE `capteurs` (
   `ID-cap` varchar(20) NOT NULL,
   `nom` varchar(20) NOT NULL,
-  `type` varchar(20) NOT NULL,
   `ID-bat` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `capteurs`
+--
+
+INSERT INTO `capteurs` (`ID-cap`, `nom`, `ID-bat`) VALUES
+('AM107-24', 'capbate', 'E');
 
 -- --------------------------------------------------------
 
@@ -76,7 +90,9 @@ CREATE TABLE `mesures` (
   `date` date NOT NULL DEFAULT current_timestamp(),
   `heure` time NOT NULL DEFAULT current_timestamp(),
   `ID-cap` varchar(20) NOT NULL,
-  `Salle` varchar(10) NOT NULL
+  `Salle` varchar(10) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `valeur` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -102,6 +118,16 @@ ALTER TABLE `capteurs`
 ALTER TABLE `mesures`
   ADD PRIMARY KEY (`ID-mes`),
   ADD KEY `ID-cap` (`ID-cap`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `mesures`
+--
+ALTER TABLE `mesures`
+  MODIFY `ID-mes` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées

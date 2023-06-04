@@ -47,7 +47,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
     <section class="admin">
         <legend class="form">Choissisez le bâtiment que vous souhaitez ajouter</legend>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="./scripts_php/ajout_batiments.php" method="post" enctype="multipart/form-data" >
             <section class="batiment">
                 
                 <select id="ID_bat" name="ID_bat">
@@ -55,6 +55,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
                     <option value="B">Batiment B</option>
                     <option value="C">Batiment C</option>
                     <option value="D">Batiment D</option>
+                    <option value="E">Batiment E</option>
                   </select>
             </section>
 
@@ -78,10 +79,10 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
     <section class="admin">
         <legend class="form">Choissisez le bâtiment que vous souhaitez supprimer</legend>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="./scripts_php/suppr_batiments.php" method="post" enctype="multipart/form-data">
             <section class="batiment">
                 
-                <select id="ID_bat" name="ID_bat">
+                <select id="ID_bat" name="batiment">
                     <option value="A">Batiment A</option>
                     <option value="B">Batiment B</option>
                     <option value="C">Batiment C</option>
@@ -107,10 +108,18 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
 <section class="admin">
 
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="./scripts_php/ajout_capteur.php" method="post" enctype="multipart/form-data">
         
             <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
-            
+            <section class="batiment">
+                
+                <select id="ID_cap" name="ID_cap">
+                    <option value="A">Capteur 1 </option>
+                    <option value="B">Capteur 2</option>
+                    <option value="C">Capteur 3</option>
+                    <option value="D">Capteur 4</option>
+                  </select>
+            </section>
 
         <section class="form">
 
@@ -130,19 +139,18 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
 <section class="admin">
 
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="./scripts_php/suppr_capteur.php" method="post" enctype="multipart/form-data">
         
             <legend class="form">Choissisez le capteur que vous souhaitez supprimer</legend>
-            <section class="form">
-
-                <input type="text" id="ID-cap" name="nom" placeholder="ID capteur"><br>
-
-                <input type="text" id="nom" name="login" placeholder="Nom"><br>
-
-            
-                <input type="text" id="ID-bat" name="login" placeholder="ID batiment"><br>
-
-        </section>
+            <section class="batiment">
+                
+                <select id="ID_cap" name="ID_cap">
+                    <option value="A">Capteur 1</option>
+                    <option value="B">Capteur 2</option>
+                    <option value="C">Capteur 3</option>
+                    <option value="D">Capteur 4</option>
+                  </select>
+            </section>
 
         <section class="valid">
             <input type="submit" value="Valider" class="valider" />

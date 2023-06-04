@@ -1,76 +1,85 @@
 #!/bin/bash
 
-#Infinite loop
 while true 
 do
 
-#subscribing to the broker of the room E209
-	data_E209=$(mosquitto_sub -h iot.iut-blagnac.fr -u student -P student -t "STDS/Student/by-room/E209/#" -C 1)
-	#The date and the hour of the subscribtion 
-	date1=$(date +%F)
-	heure1=$(date +%X)
-	#The name of the sensor 
-	ID_capE209=$(echo "E209")
-	#A random number for the ID, until 0 32767
-	ID_mesE209=$RANDOM
+
+    # Query the database for list of captor IDs
+    cap_pres_string=$(echo "SELECT \`ID-cap\` FROM sae23db.capteurs;" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db")
+
+
+    clear
+ 
+
+    # Remove the first line from the query result
+    cap_pres_string=$(echo "$cap_pres_string" | sed '1d')
+
+    if [[ -z "$cap_pres_string" ]]
+    then
+        echo "Aucun capteur trouve dans la base de donnees..."
+        sleep 5
+        continue
+    fi
 	
-
-#subscribing to the broker of the room E006
-	data_E006=$(mosquitto_sub -h iot.iut-blagnac.fr -u student -P student -t "STDS/Student/by-room/E006/#" -C 1)
-	#The date and the hour of the subscribtion 
-	date2=$(date +%F)
-	heure2=$(date +%X)
-	#The name of the sensor 
-	ID_capE006=$(echo "E006")
-	#A random number for the ID, until 0 32767
-	ID_mesE006=$RANDOM
-	
-	
-#subscribing to the broker of the room B202
-	data_B202=$(mosquitto_sub -h iot.iut-blagnac.fr -u student -P student -t "STDS/Student/by-room/B202/#" -C 1)
-	#The date and the hour of the subscribtion 
-	date3=$(date +%F)
-	heure3=$(date +%X)
-	#The name of the sensor 
-	ID_capB202=$(echo "B202")
-	#A random number for the ID, until 0 32767
-	ID_mesEB202=$RANDOM
-
-#subscribing to the broker of the room B110
-	data_B110=$(mosquitto_sub -h iot.iut-blagnac.fr -u student -P student -t "STDS/Student/by-room/B110/#" -C 1)
-	#The date and the hour of the subscribtion 
-	date4=$(date +%F)
-	heure4=$(date +%X)
-	#The name of the sensor 
-	ID_capB110=$(echo "EB110")
-	#A random number for the ID, until 0 32767
-	ID_mesB110=$RANDOM
+    # Split the query result into an array of captor IDs
+    IFS=$'\n' read -r -d '' -a cap_pres <<< "$cap_pres_string"
 
 
-#Vérification de la présence de la commande mysql
+    echo " Liste des capteurs disponibles dans la DB : "
+    echo "       ***********************"
+    echo ""
+    for id in "${cap_pres[@]}"
+    do                    	
+        echo "       - $id"
+    done
+    echo ""
+    echo "       ***********************"
+    echo " En attente de la recéption des données... "
 
-if command -V mysql > /dev/null; then 
-	echo "la commande 'mysql' n'est pas installée."
-	exit 1
-fi
+    # Listen for MQTT messages from any captor
+    while read -r topic data
+    do
 
-#Vérification de la présence de la base de données
 
-if ! mysql -h 127.0.0.1 -e "USE sae23db;" > /dev/null 2>&1; then
-	echo "impossible de se connecter à la base de données"
-	exit 1
-fi
+        # Extract the captor ID from the topic
+        id=$(echo "$topic" | cut -d '/' -f 3)
 
-	#Insertion des données dans la base de données
-	
-	$(echo "INSERT INTO sae23db.mesures (ID-mes, date, heure, valeur, IDcap) VALUES ('$ID_mesE209', '$date1', '$heure1', '$data_E209', '$ID_capE209');" | /opt/lampp/bin/mysql -h localhost -u root -ppassroot)
-	$(echo "INSERT INTO sae23db.mesures (ID-mes, date, heure, valeur, IDcap) VALUES ('$ID_mesE006', '$date2', '$heure2', '$data_E006', '$ID_capE2006');" | /opt/lampp/bin/mysql -h localhost -u root -ppassroot)
-	$(echo "INSERT INTO sae23db.mesures (ID-mes, date, heure, valeur, IDcap) VALUES ('$ID_mesB202', '$date3', '$heure3', '$data_B202', '$ID_capEB202');" | /opt/lampp/bin/mysql -h localhost -u  root -ppassroot)
-	$(echo "INSERT INTO sae23db.mesures (ID-mes, date, heure, valeur, IDcap) VALUES ('$ID_mesB110', '$date4', '$heure4', '$data_B110', '$ID_capB110');" | /opt/lampp/bin/mysql -h localhost -u root -ppassroot)
 
+        # Check if this captor is in the list of captors from the database
+        if printf '%s\n' "${cap_pres[@]}" | grep -q -P "^$id$"; then
+
+
+            # Extract the data from the MQTT message
+            room=$(echo "$data" | jq '.[1].room')
+            data_temp=$(echo "$data" | jq '.[0].temperature')
+            data_hum=$(echo "$data" | jq '.[0].humidity')
+
+            echo "Température du capteur $id : $data_temp"
+            echo "Humidite du capteur $id : $data_hum"
+
+
+            # Send the data to the database
+            #fetch the time in a format 00:00:00
+            
+            timee=$(date +%H:%M:%S)
+            echo $timee
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Temperature', '$data_temp');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Humidite', '$data_hum');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
+            sleep 10
+
+            clear
+
+
+            echo "**********************************************************"
+            echo "*                                                        *"
+            echo "*  Les donnees ont ete correctement envoyees vers la DB  *"
+            echo "*                                                        *"
+            echo "**********************************************************"
+
+            # Break out of the while loop to go back to the beginning and refresh the captor list
+            break
+
+
+        fi
+    done < <(mosquitto_sub -h mqtt.iut-blagnac.fr -t "Student/by-deviceName/+/data" -v)
 done
-
-
-
-
-
