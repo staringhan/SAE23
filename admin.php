@@ -33,7 +33,6 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
             <li><a href="index.php">Accueil</a></li>
             <li><a href="consultation.php">Consultation</a></li>
             <li><a  class ="current" href="#">Admin</a></li>
-
             <li><a href="deconnexion.php">Déconnexion</a></li>
         </ul>
         
@@ -60,6 +59,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
             </section>
 
         <section class="form">
+
                 
                 <input type="text" id="nom" name="nom" placeholder="Nom du batiment"><br>
 
@@ -122,30 +122,33 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
     <form action="./scripts_php/ajout_capteur.php" method="post" enctype="multipart/form-data">
         
             
+        <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
+
+        <section>
+                
+            <select id="ID_bat" name="batiment">
+                <option value="A">Batiment A</option>
+                <option value="B">Batiment B</option>
+                <option value="C">Batiment C</option>
+                <option value="D">Batiment D</option>
+                <option value="E">Batiment E</option>
+              </select>
+        </section>
 
         <section class="form">
-        <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
-            
-            <input type="text" id="ID-cap" name="nom" placeholder="ID capteur"><br>
 
             <input type="text" id="nom" name="login" placeholder="Nom"><br>
 
-            <section>
-                
-                <select id="ID_bat" name="batiment">
-                    <option value="A">Batiment A</option>
-                    <option value="B">Batiment B</option>
-                    <option value="C">Batiment C</option>
-                    <option value="D">Batiment D</option>
-                    <option value="E">Batiment E</option>
-                  </select>
-            </section>
+            <input type="text" id="ID-cap" name="nom" placeholder="ID capteur"><br>
 
-
+            
+     
         </section>
+
             <section class="valid">
                 <input type="submit" value="Valider" class="valider" />
             </section>
+
         </form>
 </section>
 
@@ -181,10 +184,12 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
     </form>
 
 </section>
-
 </section>
 
 
+</body>
+
+</html>
 
 
 

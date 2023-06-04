@@ -74,17 +74,20 @@
 
 <footer>
     
-    <ul class="liste">
-        <li>
-            <a href="https://www.iut-blagnac.fr/fr/" target="_blank">Iut de Blagnac</a>
-        </li>
-        <li>
-            <a href="https://www.iut-blagnac.fr/fr/formations/but-rt" target="_blank">Etudiants en R&T</a>
-        </li>
-        <li>
-            <a href="https://github.com/staringhan/SAE23">GitHub</a>
-        </li>
-    </ul>
+<ul class="liste">
+            <li>
+                <a href="https://www.iut-blagnac.fr/fr/" target="_blank">Iut de Blagnac</a>
+            </li>
+            <li>
+                <a href="https://www.iut-blagnac.fr/fr/formations/but-rt" target="_blank">Etudiants en R&T</a>
+            </li>
+            <li>
+                <a href="https://github.com/staringhan/SAE23">GitHub</a>
+            </li>
+            <li>
+                <a href="#" class="current">Mentions légales</a>
+            </li>
+        </ul>
 
 <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
     <p class="Validator">Validation HTML5</p> 
