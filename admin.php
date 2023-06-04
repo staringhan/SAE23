@@ -31,7 +31,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="consultation.php">Consultation</a></li>
             <li><a  class ="current" href="#">Admin</a></li>
 
             <li><a href="deconnexion.php">Déconnexion</a></li>

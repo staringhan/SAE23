@@ -65,7 +65,7 @@ do
             echo $timee
             echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Temperature', '$data_temp');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
             echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Humidite', '$data_hum');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
-            sleep 10
+            
 
             clear
 

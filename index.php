@@ -24,7 +24,7 @@
 
         <ul>
             <li><a class="current" href="#">Accueil</a></li>
-            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="consultation.php">Consultation</a></li>
             <li><a href="connexion.php">Connexion</a></li>
         </ul>
         
@@ -51,17 +51,20 @@
     #connect to the database
     include 'connect.php';
     //make the request and fetch the data
-    $sql = "SELECT `capteurs`.*, `mesures`.* FROM `capteurs` LEFT JOIN `mesures` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap`";
+    $sql = "SELECT `ID-bat`,`nom` FROM `batiment`";
     $result = mysqli_query($con, $sql);
     //display the data in a table
-    if (mysqli_num_rows($result) > 0) {
-      echo "<table><tr><th>salle</th><th>capteurs</th><th>valeurs</th></tr>";
-      while($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>".$row["nom"]."</td><td>".$row["type"]."</td><td>".$row["valeur"]."</td></tr>";
-      }
-      echo "</table>";
-    } else {
-      echo "0 results";
+    if (mysqli_num_rows($result) > 0) 
+    {
+        echo "<table><tr><th>Batiment</th><th>id</th></tr>";
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) 
+        {
+            echo "<tr><td>".$row["nom"]."</td><td>".$row["ID-bat"]."</td></tr>";
+        }
+        echo "</table>";
+
+      
     }
     ?>
     
