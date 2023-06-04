@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 03 juin 2023 à 19:27
+-- Généré le : dim. 04 juin 2023 à 17:03
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -57,8 +57,9 @@ CREATE TABLE `batiment` (
 --
 
 INSERT INTO `batiment` (`ID-bat`, `nom`, `login`, `mdp`) VALUES
-('A', 'Administra', 'loginA', 'loginA'),
-('E', 'RT', 'loginE', 'loginE');
+('A', 'Batiment A', 'loginA', 'loginA'),
+('B', 'Batiment B', 'batb', 'batb'),
+('E', 'Batiment B', 'loginE', 'loginE');
 
 -- --------------------------------------------------------
 
@@ -77,9 +78,9 @@ CREATE TABLE `capteurs` (
 --
 
 INSERT INTO `capteurs` (`ID-cap`, `nom`, `ID-bat`) VALUES
-('AM107-2', 'Cap-B110', 'E'),
+('AM107-2', 'Cap-B110', 'B'),
 ('AM107-27', 'Cap-E004', 'E'),
-('AM107-3', 'Cap-B111', 'E'),
+('AM107-3', 'Cap-B111', 'B'),
 ('AM107-31', 'Cap-E101', 'E'),
 ('AM107-40', 'Cap-E207', 'E');
 
@@ -95,7 +96,7 @@ CREATE TABLE `mesures` (
   `heure` time NOT NULL DEFAULT current_timestamp(),
   `ID-cap` varchar(20) NOT NULL,
   `Salle` varchar(10) NOT NULL,
-  `type` varchar(10) NOT NULL,
+  `type` varchar(20) NOT NULL,
   `valeur` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -104,15 +105,15 @@ CREATE TABLE `mesures` (
 --
 
 INSERT INTO `mesures` (`ID-mes`, `date`, `heure`, `ID-cap`, `Salle`, `type`, `valeur`) VALUES
-(61, '2023-06-03', '00:00:00', 'AM107-3', '\"B111\"', 'Temperatur', 24.1),
+(61, '2023-06-03', '00:00:00', 'AM107-3', '\"B111\"', 'Temperature', 24.1),
 (62, '2023-06-03', '00:00:00', 'AM107-3', '\"B111\"', 'Humidite', 54.5),
-(63, '2023-06-03', '00:00:00', 'AM107-2', '\"B110\"', 'Temperatur', 24.6),
+(63, '2023-06-03', '00:00:00', 'AM107-2', '\"B110\"', 'Temperature', 24.6),
 (64, '2023-06-03', '00:00:00', 'AM107-2', '\"B110\"', 'Humidite', 52),
-(65, '2023-06-03', '00:00:00', 'AM107-27', '\"E004\"', 'Temperatur', 23.8),
+(65, '2023-06-03', '00:00:00', 'AM107-27', '\"E004\"', 'Temperature', 23.8),
 (66, '2023-06-03', '00:00:00', 'AM107-27', '\"E004\"', 'Humidite', 56.5),
-(67, '2023-06-03', '00:00:00', 'AM107-31', '\"E101\"', 'Temperatur', 24.9),
+(67, '2023-06-03', '00:00:00', 'AM107-31', '\"E101\"', 'Temperature', 24.9),
 (68, '2023-06-03', '00:00:00', 'AM107-31', '\"E101\"', 'Humidite', 44),
-(69, '2023-06-03', '00:00:00', 'AM107-40', '\"E206\"', 'Temperatur', 25.4),
+(69, '2023-06-03', '00:00:00', 'AM107-40', '\"E206\"', 'Temperature', 25.4),
 (70, '2023-06-03', '00:00:00', 'AM107-40', '\"E206\"', 'Humidite', 48);
 
 --

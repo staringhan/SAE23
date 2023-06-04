@@ -44,7 +44,6 @@
 
 <section>
     <h3>Voici les bâtiments gérés </h3>
-
     <?php
     
     #basic html page with a table with 3 columns and n rows named "salle", "capteurs" and "valeurs"

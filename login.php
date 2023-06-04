@@ -30,7 +30,10 @@ if (mysqli_num_rows($result) > 0) {
         header('Location: gestionnaire.php');
     
     } else {
-        echo "You are not connected";
+        echo "<script type='text/javascript'>alert('Wrong login or password');</script>";
+        // Redirect to the login page after a brief delay
+        echo "<script type='text/javascript'> window.location.href = '../connexion.php'; </script>";
+        exit;
     }
 }
 ?>
