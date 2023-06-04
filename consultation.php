@@ -107,6 +107,9 @@ if (mysqli_num_rows($result) > 0) {
         <li>
             <a href="https://github.com/staringhan/SAE23">GitHub</a>
         </li>
+        <li>
+            <a href="mentionsleg.html">Mentions légales</a>
+        </li>
     </ul>
 
 <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>

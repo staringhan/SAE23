@@ -60,7 +60,7 @@ label.texte{
 
 section.form{
 	margin: auto;
-	width: 50%;
+	width: 80%;
 	text-align: center;
 	
 }
@@ -68,7 +68,7 @@ section.form{
 section.batiment{
 	margin: auto;
 	margin-bottom: 10px;
-	width: 50%;
+	width: 80%;
 }
 legend.form{
 	font-size: 20px;
@@ -115,20 +115,24 @@ input{
 
 
 input.valider{
-	height: 40px;
-	border-radius: 2%;
-	width: 50%;
-	border: none;
-	background-color: #02b958;
-    background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
-	margin-bottom: 0px;
+ background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
+ margin: 1px;
+	
+           
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            border: none;
+            border-radius: 10px;
+            
 }
 
 input.valider:hover{
-	background-color: #026f35;
-    background-image: linear-gradient(90deg, #012f16 0%, #5a5a59 100%);
-	cursor: pointer;
-	transition: .2s;
+	background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 
@@ -136,11 +140,47 @@ input.valider:hover{
 input[type=text]{
 	padding: 12px 20px;
 	margin: 8px 0;
+	background-color: white;
+	color: black;
+	border: none;
 	box-sizing: border-box;
 }
 
+input#nom {
+	background-image: url("../media/name.png");
+	background-repeat: no-repeat;
+	color: black;
+	background-position: 2%;
+	background-size: 30px;
+	font-size: 16px;
+  }
+  
+  input#login {
+	background-image: url("../media/user1.svg");
+	background-repeat: no-repeat;
+	color: black;
+	background-position: 2%;
+	background-size: 20px;
+	font-size: 16px;
+  }
 
+  input#mdp {
+	background-image: url("../media/pass.png");
+	background-repeat: no-repeat;
+	color: black;
+	background-position: 2%;
+	background-size: 20px;
+	font-size: 16px;
+  }
 
+  input#ID-cap {
+	background-image: url("../media/sensor.png");
+	background-repeat: no-repeat;
+	color: black;
+	background-position: 2%;
+	background-size: 20px;
+	font-size: 16px;
+  }
 legend{
 	text-align: center;
 	margin-bottom: 10px;
@@ -210,9 +250,8 @@ nav ul li a{
 }
 
 nav ul li a:hover{				/*style du hover des liens de la navbar */
-background-color: #02b958;
-background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
-
+   background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
+   
 
 
 
@@ -277,6 +316,21 @@ h2.hautpage{
 	margin-top: 7%;
 }
 
+dt{
+	font-size:20px ;
+}
+
+ol{
+	list-style-type: none;
+}
+
+ol li ol{
+	font-size: 17px;
+}
+
+ol li ol ol li{
+	margin right: 20%;
+}
 /* --------------------------TITRES------------------------------------- */
 
 /* --------------------------SECTIONS------------------------------------- */
