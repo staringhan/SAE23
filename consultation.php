@@ -55,7 +55,7 @@ if (mysqli_num_rows($result) > 0) {
         //fetch the last value of each sensor in the building, in a table
         $IDbat = $row["ID-bat"];
         
-        $sql2 = "SELECT `mesures`.`valeur`, `mesures`.`date`, `mesures`.`heure`, `mesures`.`Salle`, `capteurs`.`ID-cap`, `batiment`.`nom`, `batiment`.`ID-bat`
+        $sql2 = "SELECT `mesures`.`valeur`, `mesures`.`date`, `mesures`.`heure`, `mesures`.`Salle`, `capteurs`.`ID-cap`, `batiment`.`nom`, `batiment`.`ID-bat`, `mesures`.`type`
                 FROM `mesures`
                 LEFT JOIN `capteurs` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap`
                 LEFT JOIN `batiment` ON `capteurs`.`ID-bat` = `batiment`.`ID-bat`
@@ -65,26 +65,24 @@ if (mysqli_num_rows($result) > 0) {
 
         $result2 = mysqli_query($con, $sql2);
         if (mysqli_num_rows($result2) > 0) {
-            echo '<table>';
-            echo '<tr>';
-            echo '<th>Salle</th>';
-            echo '<th>Capteur</th>';
-            echo '<th>Valeur</th>';
-            echo '<th>Date</th>';
-            echo '<th>Heure</th>';
-            echo '</tr>';
             while($row2 = mysqli_fetch_assoc($result2)) {
-                if ($row2["nom"] == $row["nom"]) {
-                    echo '<tr>';
-                    echo '<td>' .$row2["Salle"]. '</td>';
-                    echo '<td>' .$row2["ID-cap"]. '</td>';
-                    echo '<td>' .$row2["valeur"]. '</td>';
-                    echo '<td>' .$row2["date"]. '</td>';
-                    echo '<td>' .$row2["heure"]. '</td>';
-                    echo '</tr>';
-                }
+                echo '<table>';
+                echo '<tr>';
+                echo '<th>Salle</th>';
+                echo '<th>Type</th>';
+                echo '<th>Valeur</th>';
+                echo '<th>Date</th>';
+                echo '<th>Heure</th>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td>' .$row2["Salle"]. '</td>';
+                echo '<td>' .$row2["type"]. '</td>';
+                echo '<td>' .$row2["valeur"]. '</td>';
+                echo '<td>' .$row2["date"]. '</td>';
+                echo '<td>' .$row2["heure"]. '</td>';
+                echo '</tr>';
+                echo '</table>';
             }
-            echo '</table>';
         }
 
 
