@@ -27,6 +27,12 @@ if (mysqli_num_rows($result) > 0) {
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $password;
         $_SESSION['gestionnaire'] = true;
+
+        //request the building id of this user in the database
+        $sql = "SELECT `ID-bat` FROM `batiment` WHERE `login` = '$login' AND `mdp` = '$password'";
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['ID-bat'] = $row['ID-bat'];
         header('Location: gestionnaire.php');
     
     } else {

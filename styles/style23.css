@@ -603,3 +603,13 @@ img.validator{
 }
 
 }
+
+canvas {
+		width: 400px;
+		height: 500px;
+}
+
+.chart-canvas {
+	width: 400px;
+	height: 500px;
+}
