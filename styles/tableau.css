@@ -4,42 +4,45 @@
 
 
 table{
-	width: 800px;
+ border-collapse: collapse;
+  border-radius: 20px;
+  overflow: hidden;
+	width: 80%;
 	margin: auto;
-	top: 100px;
-	border-width: 2px;
-	border-collapse: collapse;
 
 }
 
 caption{
-	background-color: #353535;
+	background-color: rgb(57,57,57);
 	color: white;
 	font-style: normal;
 	font-size: 18px;
 	height: 50px;
 	text-align: center;
+	position: sticky;
 	font-weight: bold;
 	border-collapse:collapse;
 	padding-top: 15px;
 }
 th{
-background-color: #7C7C7C;
-	color: white;
+background-color: rgb(60,60,60);
+	color: rgb(77,170,102);
 	font-style: normal;
 	font-size: 15px;
+	position: sticky;
 	height:30px;
 	text-align:center;
 	font-weight:bold;
-	border: 1px solid black;
 	border-collapse: collapse;
 	padding-bottom: 10px;
 	padding-top: 10px;	
 }
 td{
+	background-color: rgb(34,34,34);
+	color: rgb(200,200,200);
 	height: 50px;
 	text-align: center;
-	border: 1px solid black;
+	;
 	border-collapse:collapse;
 	text-indent: 11px;
 }
@@ -47,6 +50,10 @@ td.td1{
 	width:150px;
 	height: 15px;
 	text-align: right	
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(20,20,20);
 }
 
 td a :hover, td a :visited {
