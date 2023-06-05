@@ -54,7 +54,7 @@ do
             data_temp=$(echo "$data" | jq '.[0].temperature')
             data_hum=$(echo "$data" | jq '.[0].humidity')
             data_co2=$(echo "$data" | jq '.[0].co2')
-            data_lum=$(echo "$data" | jq '.[0].luminosity')
+            data_lum=$(echo "$data" | jq '.[0].illumination')
 
             echo "Température du capteur $id : $data_temp"
             echo "Humidite du capteur $id : $data_hum"
