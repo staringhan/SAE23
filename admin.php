@@ -124,7 +124,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
             
         <legend class="form">Choissisez le capteur que vous souhaitez ajouter</legend>
 
-        <section>
+        <section class="batiment">
                 
             <select id="ID_bat" name="batiment">
                 <option value="A">Batiment A</option>

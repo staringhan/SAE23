@@ -69,6 +69,7 @@ section.batiment{
 	margin: auto;
 	margin-bottom: 10px;
 	width: 80%;
+
 }
 legend.form{
 	font-size: 20px;
@@ -78,17 +79,21 @@ legend.form{
 
 select{
 	background-color: #303031;
+	color: white;
 	width: 100%;
     margin: 0;
     padding: 5px 1px;        
-	
     cursor: pointer;
     border: none;
     border-radius: 0;
     background-color: transparent;
-	color: darken(#015413,35%);
+	
 	font-size: 20px;
 	text-align: center;
+}
+
+select.option{
+	background-color: black;
 }
 
 .valid{
