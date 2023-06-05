@@ -63,9 +63,16 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
     $sql_types = "SELECT DISTINCT `type` FROM `mesures`,`capteurs`,`batiment` 
     WHERE `mesures`.`ID-cap` = `capteurs`.`ID-cap` 
     AND `capteurs`.`ID-bat` = `batiment`.`ID-bat` 
-    AND `batiment`.`ID-bat` = '$IDbat'
+    AND `batiment`.`ID-bat` = ?
     ORDER BY `type` ASC";
-    $result_types = mysqli_query($con, $sql_types);
+    
+    // Prepare and execute the statement
+    $stmt = mysqli_prepare($con, $sql_types);
+    mysqli_stmt_bind_param($stmt, "s", $IDbat);
+    mysqli_stmt_execute($stmt);
+    
+    // Get the result
+    $result_types = mysqli_stmt_get_result($stmt);
 
     // Iterate over the types of data
     while ($row_types = mysqli_fetch_assoc($result_types)) {
@@ -76,11 +83,18 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
                 FROM `mesures`, `batiment`, `capteurs`
                 WHERE `capteurs`.`ID-bat` = `batiment`.`ID-bat`
                 AND `mesures`.`ID-cap` = `capteurs`.`ID-cap`
-                AND `batiment`.`ID-bat` = '$IDbat'
-                AND `type` = '$type'
+                AND `batiment`.`ID-bat` = ?
+                AND `type` = ?
                 ORDER BY `ID-mes` ASC
-                LIMIT 50";
-        $result = mysqli_query($con, $sql);
+                LIMIT 24";
+
+        // Prepare and execute the statement
+        $stmt = mysqli_prepare($con, $sql);
+        mysqli_stmt_bind_param($stmt, "ss", $IDbat, $type);
+        mysqli_stmt_execute($stmt);
+
+        // Get the result
+        $result = mysqli_stmt_get_result($stmt);
 
         // Store the data in an array
         $data = array();
