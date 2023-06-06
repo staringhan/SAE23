@@ -36,13 +36,10 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
         
 
         <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="consultation.html">Consultation</a></li>
-            <li><a href="deconnexion.php">Déconnexion</a></li>
-            <li><a href="administration.html">Admin</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="consultation.php">Consultation</a></li>
             <li><a class="current" href="#">Gestion</a></li>
-            <li><a href="gestionprojet.html">Projet</a></li>
-            <li><a href="gestionnaire2.php">graphs</a></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
         </ul>
         
     </nav>
