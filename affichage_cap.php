@@ -33,12 +33,11 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
         
 
         <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="consultation.php">Consultation</a></li>
             <li><a href="deconnexion.php">Déconnexion</a></li>
             <li><a href="administration.html">Admin</a></li>
             <li><a class="current" href="#">Gestion</a></li>
-            <li><a href="gestionnaire2.php">graphs</a></li>
         </ul>
         
     </nav>
@@ -81,9 +80,23 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row["ID-cap"] . "</td>";
         echo "<td>" . $row["date"] . "</td>";
         echo "<td>" . $row["heure"] . "</td>";
+        // dele te " " from the room name
+        $row["Salle"] = str_replace('"', "", $row["Salle"]);
+
         echo "<td>" . $row["Salle"] . "</td>";
-        echo "<td>" . $row["type"] . "</td>";
-        echo "<td>" . $row["valeur"] . "</td>";
+        if ($row["type"] == "Temperature") {
+            echo "<td>" . $row["type"] . "</td>";
+            echo "<td>" . $row["valeur"] . "°C</td>";
+        } if ($row["type"] == "Humidite") {
+            echo "<td>" . $row["type"] . "</td>";
+            echo "<td>" . $row["valeur"] . " %</td>";
+        }if ($row["type"] == "CO2") {
+            echo "<td>" . $row["type"] . "</td>";
+            echo "<td>" . $row["valeur"] . " ppm</td>";
+        }if ($row["type"] == "Luminosite") {
+            echo "<td>" . $row["type"] . "</td>";
+            echo "<td>" . $row["valeur"] . " lux</td>";
+        }
         echo "</tr>";
     }
     echo "</table>";

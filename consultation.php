@@ -75,7 +75,9 @@ if (mysqli_num_rows($result) > 0) {
                 echo '<th>Heure</th>';
                 echo '</tr>';
                 echo '<tr>';
-                echo '<td>' .$row2["Salle"]. '</td>';
+                // dele te " " from the room name
+                $row2["Salle"] = str_replace('"', "", $row2["Salle"]);
+                echo "<td>" . $row2["Salle"] . "</td>";
                 echo '<td>' .$row2["type"]. '</td>';
                 echo '<td>' .$row2["valeur"]. '</td>';
                 echo '<td>' .$row2["date"]. '</td>';
