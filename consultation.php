@@ -25,7 +25,7 @@
         <ul>
             <li><a  href="index.php">Accueil</a></li>
             <li><a class="current" href="#">Consultation</a></li>
-
+            <li><a href="gestionprojet.html">Projet</a></li>
             <li><a href="connexion.php">Connexion</a></li>
 
         </ul>

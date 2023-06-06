@@ -121,16 +121,14 @@ input{
 
 input.valider{
  background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
- margin: 1px;
-	
-           
-            text-align: center;
-            text-transform: uppercase;
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;            
-            border: none;
-            border-radius: 10px;
+ margin: 1px;          
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+border: none;
+border-radius: 10px;
             
 }
 
@@ -333,9 +331,7 @@ ol li ol{
 	font-size: 17px;
 }
 
-ol li ol ol li{
-	margin right: 20%;
-}
+
 /* --------------------------TITRES------------------------------------- */
 
 /* --------------------------SECTIONS------------------------------------- */

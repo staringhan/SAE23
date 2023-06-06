@@ -42,6 +42,7 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
             <li><a href="deconnexion.php">Déconnexion</a></li>
             <li><a href="administration.html">Admin</a></li>
             <li><a class="current" href="#">Gestion</a></li>
+            
         </ul>
         
     </nav>
