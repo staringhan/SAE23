@@ -59,42 +59,40 @@ include('connect.php');
 //get the building id of the user
 $IDbat = $_SESSION['ID-bat'];
 
-//history of the building sensors
+//form to select the sensor to visualizethe data of
 
-$sql="SELECT `mesures`.`valeur`, `mesures`.`date`, `mesures`.`heure`, `mesures`.`Salle`, `capteurs`.`ID-cap`, `batiment`.`nom`, `batiment`.`ID-bat`, `mesures`.`type`
-FROM `mesures`
-LEFT JOIN `capteurs` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap`
-LEFT JOIN `batiment` ON `capteurs`.`ID-bat` = `batiment`.`ID-bat`
-WHERE `capteurs`.`ID-bat` = \"$IDbat\"
-ORDER BY `mesures`.`date` DESC, `mesures`.`heure` DESC
-LIMIT 30";
-echo '<section class="tableau">';
+//sql query to get the list of sensors in the building
+$sql = "SELECT `nom`, `ID-bat` 
+FROM `capteurs` 
+WHERE `ID-bat` = \"$IDbat\"";
 $result = mysqli_query($con, $sql);
+
+//if there is at least one sensor in the building
 if (mysqli_num_rows($result) > 0) {
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>ID</th>";
-    echo "<th>Date</th>";
-    echo "<th>Heure</th>";
-    echo "<th>Salle</th>";
-    echo "<th>Type</th>";
-    echo "<th>Valeur</th>";
-    echo "</tr>";
+    //create a form to select the sensor
+    echo "<section>";
+    echo "<h3>Choisissez un capteur</h3>";
+    echo "<form action=\"affichage_cap.php\" method=\"post\">";
+    echo "<select name=\"ID-cap\" id=\"ID-cap\">";
+    //for each sensor in the building
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row["ID-cap"] . "</td>";
-        echo "<td>" . $row["date"] . "</td>";
-        echo "<td>" . $row["heure"] . "</td>";
-        echo "<td>" . $row["Salle"] . "</td>";
-        echo "<td>" . $row["type"] . "</td>";
-        echo "<td>" . $row["valeur"] . "</td>";
-        echo "</tr>";
+        //create an option with the sensor id as value and the sensor name as text
+        echo "<option value=\"" . $row["nom"] . "\">" . $row["nom"] . "</option>";
     }
-    echo "</table>";
+    echo "</select>";
+    //choice of the number of days to display
+    echo "<label for=\"nbjours\">Nombre de jours à afficher</label>";
+    echo "<input type=\"number\" name=\"nbjours\" id=\"nbjours\" min=\"1\" max=\"30\" value=\"1\">";
+    echo "<input type=\"submit\" value=\"Valider\">";
+    echo "</form>";
+    echo "</section>";  
 } else {
-    echo "<p class=\"erreur\">Aucune donnée</p>";
+    //if there is no sensor in the building, display an error message
+    echo "<p class=\"erreur\">Aucun capteur dans ce batiment</p>";
 }
-echo '</section>';
+
+
+
 
 
 ?>

@@ -1,11 +1,15 @@
 #!/bin/bash
+host="185.176.40.25"
+user="4325492_sae23db"
+pass="Sae23dbmdp"
+databsae="4325492_sae23db"
 
 while true 
 do
 
 
     # Query the database for list of captor IDs
-    cap_pres_string=$(echo "SELECT \`ID-cap\` FROM sae23db.capteurs;" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db")
+    cap_pres_string=$(echo "SELECT \`ID-cap\` FROM capteurs;" | mysql -h "$host" -u "$user" -p"$pass" -D "$databsae")
 
 
     clear
@@ -65,10 +69,10 @@ do
             
             timee=$(date +%H:%M:%S)
             echo $timee
-            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Temperature', '$data_temp');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
-            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Humidite', '$data_hum');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
-            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'CO2', '$data_co2');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
-            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Luminosite', '$data_lum');" | mysql -h "10.188.176.156" -u "root2" -p"passroot" -D "sae23db"
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Temperature', '$data_temp');" | mysql -h "$host" -u "$user" -p"$pass" -D "$databsae"
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Humidite', '$data_hum');" |mysql -h "$host" -u "$user" -p"$pass" -D "$databsae"
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'CO2', '$data_co2');" | mysql -h "$host" -u "$user" -p"$pass" -D "$databsae"
+            echo "INSERT INTO \`mesures\`(\`ID-mes\`, \`date\`, \`heure\`, \`ID-cap\`, \`Salle\`, \`type\`, \`valeur\`) VALUES (NULL, current_timestamp(), '$timee', '$id', '$room', 'Luminosite', '$data_lum');" | mysql -h "$host" -u "$user" -p"$pass" -D "$databsae"
 
             clear
 

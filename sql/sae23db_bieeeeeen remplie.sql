@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `admin`
 --
+USE `4325492_sae23db`;
 
 CREATE TABLE `admin` (
   `login` varchar(30) NOT NULL,
@@ -91,8 +92,8 @@ INSERT INTO `capteurs` (`ID-cap`, `nom`, `ID-bat`) VALUES
 
 CREATE TABLE `mesures` (
   `ID-mes` int(10) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
-  `heure` time NOT NULL DEFAULT current_timestamp(),
+  `date` date NOT NULL,
+  `heure` time NOT NULL,
   `ID-cap` varchar(20) NOT NULL,
   `Salle` varchar(10) NOT NULL,
   `type` varchar(20) NOT NULL,
