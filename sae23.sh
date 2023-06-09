@@ -1,5 +1,5 @@
 #!/bin/bash
-host="185.176.40.25"
+host=$(hostname -I | cut -d' ' -f1)
 user="4325492_sae23db"
 pass="Sae23dbmdp"
 databsae="4325492_sae23db"
