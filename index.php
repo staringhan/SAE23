@@ -8,6 +8,8 @@
   <meta name="keywords" content="HTML, CSS">
   <link rel="stylesheet" type="text/css" href="./styles/style23.css" media="screen">
   <link rel="stylesheet" type="text/css" href="./styles/tableau.css" media="screen">
+  <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+
 
   <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
@@ -86,12 +88,12 @@
                 <a href="https://github.com/staringhan/SAE23">GitHub</a>
             </li>
             <li>
-                <a href="#" class="current">Mentions légales</a>
+                <a href="mentionsleg.html">Mentions légales</a>
             </li>
         </ul>
 
 <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
-    <p class="Validator">Validation HTML5</p> 
+    <p class="Validator">Languages utilisés</p> 
     <a href="#" target="_blank"><img class="validator" src="./media/htmllogo.png" alt="HTML 5 Valide"></a>
     <a href="#" target="_blank"><img class="validator" src="./media/csslogo.png" alt="CSS 3 Valide"></a>
 

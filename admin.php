@@ -16,6 +16,8 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
   <meta name="description" content="SAE 23, Accueil">
   <meta name="keywords" content="HTML, CSS">
   <link rel="stylesheet" type="text/css" href="./styles/style23.css" media="screen">
+  <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+
   <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 

@@ -115,7 +115,7 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
 
 <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
-    <p class="Validator">Validation HTML5</p> 
+    <p class="Validator">Languages utilisés</p> 
     <a href="#" target="_blank"><img class="validator" src="./media/htmllogo.png" alt="HTML 5 Valide"></a>
     <a href="#" target="_blank"><img class="validator" src="./media/csslogo.png" alt="CSS 3 Valide"></a>
 
