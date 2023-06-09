@@ -48,6 +48,7 @@ include 'connect.php';
 $sql = "SELECT `ID-bat`,`nom` FROM `batiment`";
 $result = mysqli_query($con, $sql);
 if (mysqli_num_rows($result) > 0) {
+    //while there are buildings, display them
     while($row = mysqli_fetch_assoc($result)) {
         echo '<section class="texte">';
         echo '<h3>' .$row["nom"]. '</h3>';
