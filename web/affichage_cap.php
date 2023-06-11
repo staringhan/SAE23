@@ -17,8 +17,8 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
   <meta name="author" content="Daniel Halidi">
   <meta name="description" content="SAE 23, Accueil">
   <meta name="keywords" content="HTML, CSS">
-  <link rel="stylesheet" type="text/css" href="./styles/style23.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="./styles/tableau.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../styles/style23.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../styles/tableau.css" media="screen">
   <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 
@@ -33,11 +33,10 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
         
 
         <ul>
-            <li><a href="index.php">Accueil</a></li>
+            <li><a href="../index.php">Accueil</a></li>
             <li><a href="consultation.php">Consultation</a></li>
-            <li><a href="deconnexion.php">Déconnexion</a></li>
-            <li><a href="administration.html">Admin</a></li>
-            <li><a class="current" href="#">Gestion</a></li>
+            <li><a href="gestionnaire.php">Gestion</a></li>
+            <li><a href="../scripts_php/deconnexion.php">Déconnexion</a></li>
         </ul>
         
     </nav>
@@ -58,9 +57,10 @@ $sql = "SELECT `capteurs`.*, `mesures`.*
 FROM `capteurs` 
 LEFT JOIN `mesures` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap`
 WHERE `nom` = \"$IDcap\"
-  AND `mesures`.`date` >= DATE_SUB(CURDATE(), INTERVAL 2 DAY)
-ORDER BY `mesures`.`date` DESC, `mesures`.`heure` DESC
+AND `date` >= DATE_SUB(CURDATE(), INTERVAL $NBjour DAY) 
+ORDER BY `date` DESC, `heure` DESC
 ";
+
 echo '<section class="tableau">';
 $result = mysqli_query($con, $sql);
 
@@ -127,9 +127,9 @@ echo '</section>';
     </ul>
 
 <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
-    <p class="Validator">Validation HTML5</p> 
-    <a href="#" target="_blank"><img class="validator" src="./media/htmllogo.png" alt="HTML 5 Valide"></a>
-    <a href="#" target="_blank"><img class="validator" src="./media/csslogo.png" alt="CSS 3 Valide"></a>
+    <p class="Validator">Languages utilisés</p> 
+    <a href="#" target="_blank"><img class="validator" src="../media/htmllogo.png" alt="HTML 5 Valide"></a>
+    <a href="#" target="_blank"><img class="validator" src="../media/csslogo.png" alt="CSS 3 Valide"></a>
    
 </footer>
 

@@ -2,7 +2,7 @@
 // Simple adding of buildings to the database from a form
 
 // Connect to the database
-include '../connect.php';
+include '../web/connect.php';
 
 //set the variables, ID-bat, nom, login, mdp
 $ID_bat = $_POST['ID_bat'];
@@ -18,5 +18,5 @@ $result = $con->query($sql);
 //close the connection
 $con->close();
 
-header('Location: ../admin.php')
+header('Location: ../web/admin.php')
 ?>

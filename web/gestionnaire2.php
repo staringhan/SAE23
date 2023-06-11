@@ -20,8 +20,8 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
   <meta name="author" content="Daniel Halidi">
   <meta name="description" content="SAE 23, Accueil">
   <meta name="keywords" content="HTML, CSS">
-  <link rel="stylesheet" type="text/css" href="./styles/style23.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="./styles/tableau.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../styles/style23.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../styles/tableau.css" media="screen">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>

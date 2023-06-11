@@ -24,9 +24,9 @@
 
         <ul>
             <li><a class="current" href="#">Accueil</a></li>
-            <li><a href="consultation.php">Consultation</a></li>
-            <li><a href="gestionprojet.html">Projet</a></li>
-            <li><a href="connexion.php">Connexion</a></li>
+            <li><a href="web/consultation.php">Consultation</a></li>
+            <li><a href="web/gestionprojet.html">Projet</a></li>
+            <li><a href="web/connexion.php">Connexion</a></li>
         </ul>
         
     </nav>
@@ -49,7 +49,7 @@
     
     #basic html page with a table with 3 columns and n rows named "salle", "capteurs" and "valeurs"
     #connect to the database
-    include 'connect.php';
+    include 'web/connect.php';
     //make the request and fetch the data
     $sql = "SELECT `ID-bat`,`nom` FROM `batiment`";
     $result = mysqli_query($con, $sql);
@@ -86,7 +86,7 @@
                 <a href="https://github.com/staringhan/SAE23">GitHub</a>
             </li>
             <li>
-                <a href="#" class="current">Mentions légales</a>
+                <a href="web/mentionsleg.html">Mentions légales</a>
             </li>
         </ul>
 
