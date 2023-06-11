@@ -13,7 +13,7 @@ body {
 
 a {
   color: #92badd;
-  display: inline-block;
+  
   text-decoration: none;
   font-weight: 400;
 }
@@ -33,82 +33,30 @@ h2 {
 
 /*NAVBAR*/
 
-label.Name {
-  color: white;
-  font-size: 35px;
-  line-height: 80px;
-  padding: 0 50px;
-  letter-spacing: 3px;
-  font-weight: bold;
+
+
+ul{
+  margin-top: .8%;
 }
 
-header {
-  position: fixed;
-  background-color: #011813;
-  background-image: linear-gradient(91deg, #011813 0%, #303031 100%);
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 0px;
-  height: 80px;
-  width: 100%;
-  top: 0;
-  border-collapse: collapse;
-  animation: nav-load 1s;
-  z-index: 2;
+
+legend{
+	margin: auto;
 }
 
-nav {
-  width: 100%;
-  top: 0;
-  position: fixed;
-  right: 0;
-}
+@keyframes nav-load{			/*animation de la navbar*/
+	0%{
+		transform: translateY(-100%);
+	}
 
-nav ul {
-  float: right;
-  padding-top: 20px;
-  display: flex;
-  margin: 0;
-  margin-right: 45px;
-}
-
-nav ul li {
-  display: inline-block;
-  line-height: 30px;
-  margin: 0 5px;
-}
-
-nav ul li a {
-  color: white;
-  font-size: 17px;
-  padding: 7px 13px;
-  border-radius: 3px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-nav ul li a:hover {
-  background-color: #02b958;
-  background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
-  transition: .5s;
+	100%{
+			transform: translateY(0%);
+	}
 }
 
 /*NAVBAR*/
 
 
-.current {
-  background-color: #02b958;
-  background-image: linear-gradient(90deg, #02b958 0%, #b7b7b4 100%);
-}
-
-@keyframes nav-load {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
 
 .wrapper {
   display: flex;
