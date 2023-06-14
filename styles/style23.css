@@ -33,6 +33,11 @@ main{
 	animation: entrée 1s;
 }
 
+section ul li{
+	font-size: 18px;
+	margin-left: 5%;
+}
+
 @keyframes entrée {   /*animation de zoom entrant*/
   0% {
     transform: scale(0.8);
@@ -96,6 +101,15 @@ select.option{
 	background-color: black;
 }
 
+select#ID-cap.selectgestion{
+	background-color: white;
+	color: black;
+	width: 50%;
+	border-radius: 10px;
+	margin-left: 26%;
+	
+}
+
 .valid{
 	background-color: transparent;
 	margin: auto;
@@ -117,7 +131,15 @@ input{
 	
 }
 
-
+input.gestion{
+	margin: 0% 25% 1% 21%;
+	width: 60%;
+	/*! justify-content: center; */
+	color: black;
+	background-color: white;
+	border-radius: 10px;
+	border: none;
+}
 
 input.valider{
  background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
@@ -129,7 +151,28 @@ background-size: 200% auto;
 color: white;            
 border: none;
 border-radius: 10px;
+}
+
+input.gestionvalider{
+background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
+margin: 1px;          
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+border: none;
+border-radius: 10px;
+margin-left: 26%;
+margin-top: 1%;
+width: 50%;
             
+}
+
+input.gestionvalider{
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 input.valider:hover{
