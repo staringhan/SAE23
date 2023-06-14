@@ -185,11 +185,12 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
         </li>
     </ul>
 
-<p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
-    <p class="Validator">Validation HTML5</p> 
-    <a href="#" target="_blank"><img class="validator" src="./media/htmllogo.png" alt="HTML 5 Valide"></a>
-    <a href="#" target="_blank"><img class="validator" src="./media/csslogo.png" alt="CSS 3 Valide"></a>
-   
+    <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
+    <p class="Validator">Languages utilisés</p> 
+    <img class="validator" src="../media/htmllogo.png" alt="HTML 5 "></a>
+    <img class="validator" src="../media/csslogo.png" alt="CSS 3 "></a>
+    <img class="validator" src="../media/phplogo.png" alt="PHP "></a>
+    
 </footer>
 
 </body>

@@ -71,7 +71,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<section class=\"admin\">";
     echo "<h3>Choisissez un capteur</h3>";
     echo "<form action=\"affichage_cap.php\" method=\"post\">";
-    echo "<select name=\"ID-cap\" id=\"ID-cap\">";
+    echo "<select class=\"selectgestion\" name=\"ID-cap\" id=\"ID-cap\">";
     //for each sensor in the building
     while ($row = mysqli_fetch_assoc($result)) {
         //create an option with the sensor id as value and the sensor name as text
@@ -79,9 +79,9 @@ if (mysqli_num_rows($result) > 0) {
     }
     echo "</select>";
     //choice of the number of days to display and beewteen which hours
-    echo "<p>Nombre de jours à afficher : <input type=\"number\" name=\"nbjours\" min=\"1\" max=\"30\" value=\"1\"></p>";
-    echo "<p>Entre <input type=\"time\" name=\"heure1\" value=\"00:00\"> et <input type=\"time\" name=\"heure2\" value=\"23:59\"></p>";
-    echo "<input type=\"submit\" value=\"Valider\">";
+    echo "<h3>Nombre de jours à afficher : </h3><input class=\"gestion\" type=\"number\" name=\"nbjours\" min=\"1\" max=\"30\" value=\"1\">";
+    echo "<h3>Entre </h3><input class=\"gestion\" type=\"time\" name=\"heure1\" value=\"00:00\"><h3>et</h3><input class=\"gestion\" type=\"time\" name=\"heure2\" value=\"23:59\">";
+    echo "<input class=\"gestionvalider\" type=\"submit\" value=\"Valider\">";
     echo "</form>";
     echo "</section>";
 
@@ -118,11 +118,12 @@ $con->close();
         </li>
     </ul>
 
-<p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
-    <p class="Validator">Validation HTML5</p> 
-    <a href="#" target="_blank"><img class="validator" src="../media/htmllogo.png" alt="HTML 5 Valide"></a>
-    <a href="#" target="_blank"><img class="validator" src="../media/csslogo.png" alt="CSS 3 Valide"></a>
-   
+    <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
+    <p class="Validator">Languages utilisés</p> 
+    <img class="validator" src="../media/htmllogo.png" alt="HTML 5 "></a>
+    <img class="validator" src="../media/csslogo.png" alt="CSS 3 "></a>
+    <img class="validator" src="../media/phplogo.png" alt="PHP "></a>
+    
 </footer>
 
 </body>
