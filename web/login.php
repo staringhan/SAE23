@@ -4,6 +4,11 @@ include 'connect.php';
 //get the data from the form
 $login = $_POST['login'];
 $password = $_POST['password'];
+//check for sql injection
+$login = mysqli_real_escape_string($con, $login);
+$password = mysqli_real_escape_string($con, $password);
+
+
 //make the request
 $sql = "SELECT * FROM `admin` WHERE `login` = '$login' AND `mdp` = '$password'";
 
@@ -42,4 +47,7 @@ if (mysqli_num_rows($result) > 0) {
         exit;
     }
 }
+
+//close the connection
+$con->close();
 ?>

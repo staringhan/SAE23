@@ -9,6 +9,11 @@ $IDcap = $_POST['ID-cap'];
 $nom = $_POST['nom'];
 $IDbat = $_POST['ID-bat'];
 
+// check for sql injection
+$IDcap = mysqli_real_escape_string($con, $IDcap);
+$nom = mysqli_real_escape_string($con, $nom);
+$IDbat = mysqli_real_escape_string($con, $IDbat);
+
 //insert in the table
 $sql = "INSERT INTO capteurs (`ID-cap`, `nom`, `ID-bat`) VALUES ('$IDcap', '$nom', '$IDbat')";
 $result = $con->query($sql);

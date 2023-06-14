@@ -68,6 +68,7 @@
 
       
     }
+    $con->close();
     ?>
     
     </section>

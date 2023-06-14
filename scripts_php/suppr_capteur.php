@@ -2,6 +2,8 @@
 // deleting sensors
 
 $capteur=$_POST['ID-cap'];
+// check for sql injection
+$capteur = mysqli_real_escape_string($con, $capteur);
 // connect to the database
 include '../web/connect.php';
 

@@ -50,6 +50,10 @@ include('connect.php');
 //get the sensor id from the form
 $IDcap = $_POST['ID-cap'];
 $NBjour = $_POST['nbjours'];
+
+//check for sql injection
+$IDcap = mysqli_real_escape_string($con, $IDcap);
+$NBjour = mysqli_real_escape_string($con, $NBjour);
 echo "<h2 class=\"hautpage\">Historique du capteur $IDcap</h2>";
 
 // get the sensor history from the database using the sensor id for the last $NBjour days
@@ -104,7 +108,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<p class=\"erreur\">Aucune donnée</p>";
 }
 echo '</section>';
-
+$con->close();
 ?>
 
 </main>

@@ -2,6 +2,8 @@
 // deleting building
 
 $batiment=$_POST['ID_bat'];
+// check for sql injection
+$batiment = mysqli_real_escape_string($con, $batiment);
 // connect to the database
 include '../web/connect.php';
 
@@ -12,6 +14,7 @@ $result = $con->query($sql);
 //close the connection
 $con->close();
 header('Location: ../web/admin.php');
+
 
 
 ?>

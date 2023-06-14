@@ -94,6 +94,8 @@ if (mysqli_num_rows($result) > 0) {
     }
 }
 
+//close the connection
+$con->close();
 ?>  
 
 </main>

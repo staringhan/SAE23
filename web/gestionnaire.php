@@ -89,10 +89,8 @@ if (mysqli_num_rows($result) > 0) {
     echo "<p class=\"erreur\">Aucun capteur dans ce batiment</p>";
 }
 
-
-
-
-
+//close the connection
+$con->close();
 ?>
 
 </main>

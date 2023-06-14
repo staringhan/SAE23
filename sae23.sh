@@ -1,8 +1,8 @@
 #!/bin/bash
-host=$(hostname -I | cut -d' ' -f1)
-user="4325492_sae23db"
-pass="Sae23dbmdp"
-databsae="4325492_sae23db"
+host="10.188.176.156" #$(hostname -I | cut -d' ' -f1)
+user="root3"
+pass="passroot3"
+databsae="sae23db"
 
 while true 
 do

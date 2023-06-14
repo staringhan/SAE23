@@ -166,8 +166,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
                     echo "<option value='" . $row['ID-cap'] . "'>" . $row['nom'] . "</option>";
                 }
                 echo "</select>";
-
-
+                $con->close();
 
                 ?>
             </section>
