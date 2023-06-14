@@ -4,10 +4,15 @@ include 'connect.php';
 //get the data from the form
 $login = $_POST['login'];
 $password = $_POST['password'];
+
+
+
 //check for sql injection
 $login = mysqli_real_escape_string($con, $login);
 $password = mysqli_real_escape_string($con, $password);
 
+//ash the password
+$password = hash('sha256', $password);
 
 //make the request
 $sql = "SELECT * FROM `admin` WHERE `login` = '$login' AND `mdp` = '$password'";

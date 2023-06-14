@@ -50,20 +50,24 @@ include('connect.php');
 //get the sensor id from the form
 $IDcap = $_POST['ID-cap'];
 $NBjour = $_POST['nbjours'];
+$heuredebut = $_POST['heure1'];
+$heurefin = $_POST['heure2'];
 
 //check for sql injection
 $IDcap = mysqli_real_escape_string($con, $IDcap);
 $NBjour = mysqli_real_escape_string($con, $NBjour);
+$heuredebut = mysqli_real_escape_string($con, $heuredebut);
+$heurefin = mysqli_real_escape_string($con, $heurefin);
 echo "<h2 class=\"hautpage\">Historique du capteur $IDcap</h2>";
 
 // get the sensor history from the database using the sensor id for the last $NBjour days
 $sql = "SELECT `capteurs`.*, `mesures`.*
 FROM `capteurs` 
 LEFT JOIN `mesures` ON `mesures`.`ID-cap` = `capteurs`.`ID-cap`
-WHERE `nom` = \"$IDcap\"
-AND `date` >= DATE_SUB(CURDATE(), INTERVAL $NBjour DAY) 
-ORDER BY `date` DESC, `heure` DESC
-";
+WHERE `nom` = '" . $IDcap . "'
+AND `date` >= DATE_SUB(CURDATE(), INTERVAL " . $NBjour . " DAY)
+AND `heure` >= '" . $heuredebut . "' AND `heure` <= '" . $heurefin . "'
+ORDER BY `date` DESC, `heure` DESC";
 
 echo '<section class="tableau">';
 $result = mysqli_query($con, $sql);

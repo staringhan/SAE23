@@ -9,13 +9,16 @@ $ID_bat = $_POST['ID_bat'];
 $nom = $_POST['nom'];
 $login = $_POST['login'];
 $mdp = $_POST['mdp'];
+
+
 //check for sql injection
 $ID_bat = mysqli_real_escape_string($con, $ID_bat);
 $nom = mysqli_real_escape_string($con, $nom);
 $login = mysqli_real_escape_string($con, $login);
 $mdp = mysqli_real_escape_string($con, $mdp);
 
-
+//ash the password
+$mdp = hash('sha256', $mdp);
 
 // Insert the values into the database
 $sql ="INSERT INTO batiment (`ID-bat`, nom, login, mdp) VALUES ('$ID_bat', '$nom', '$login', '$mdp')";

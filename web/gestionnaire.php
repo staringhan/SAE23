@@ -68,7 +68,7 @@ $result = mysqli_query($con, $sql);
 //if there is at least one sensor in the building
 if (mysqli_num_rows($result) > 0) {
     //create a form to select the sensor
-    echo "<section>";
+    echo "<section class=\"admin\">";
     echo "<h3>Choisissez un capteur</h3>";
     echo "<form action=\"affichage_cap.php\" method=\"post\">";
     echo "<select name=\"ID-cap\" id=\"ID-cap\">";
@@ -78,12 +78,18 @@ if (mysqli_num_rows($result) > 0) {
         echo "<option value=\"" . $row["nom"] . "\">" . $row["nom"] . "</option>";
     }
     echo "</select>";
-    //choice of the number of days to display
-    echo "<label for=\"nbjours\">Nombre de jours à afficher</label>";
-    echo "<input type=\"number\" name=\"nbjours\" id=\"nbjours\" min=\"1\" max=\"30\" value=\"1\">";
+    //choice of the number of days to display and beewteen which hours
+    echo "<p>Nombre de jours à afficher : <input type=\"number\" name=\"nbjours\" min=\"1\" max=\"30\" value=\"1\"></p>";
+    echo "<p>Entre <input type=\"time\" name=\"heure1\" value=\"00:00\"> et <input type=\"time\" name=\"heure2\" value=\"23:59\"></p>";
     echo "<input type=\"submit\" value=\"Valider\">";
     echo "</form>";
-    echo "</section>";  
+    echo "</section>";
+
+    
+
+    
+
+
 } else {
     //if there is no sensor in the building, display an error message
     echo "<p class=\"erreur\">Aucun capteur dans ce batiment</p>";
