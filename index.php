@@ -95,9 +95,9 @@
 
         <p class="copyright">BESSAIAH-BONVENT-GIRARD-HALIDI @ 2023</p>
     <p class="Validator">Languages utilisés</p> 
-    <img class="validator" src="../media/htmllogo.png" alt="HTML 5 "></a>
-    <img class="validator" src="../media/csslogo.png" alt="CSS 3 "></a>
-    <img class="validator" src="../media/phplogo.png" alt="PHP "></a>
+    <img class="validator" src="./media/htmllogo.png" alt="HTML 5 "></a>
+    <img class="validator" src="./media/csslogo.png" alt="CSS 3 "></a>
+    <img class="validator" src="./media/phplogo.png" alt="PHP "></a>
     
     
 </footer>
