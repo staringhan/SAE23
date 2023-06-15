@@ -7,9 +7,8 @@
   <meta name="description" content="SAE 23">
   <meta name="keywords" content="HTML, CSS" >
   <link rel="stylesheet" type="text/css" href="../styles/style23.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="../styles/tableau.css" media="screen">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link rel="shortcut icon" href="../medi/logoP.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -45,7 +44,7 @@
 
 </section>
 <section>
-    <h3> Bonvent Jean-Noël </h3>
+    <h3>Jean-Noël Bonvent</h3>
     <p>
         Je me suis essentiellement occupé de la partie php du projet, étant un nouveau langage de programmtion il a eu son lot de surprises et à été un peu compliqué à comprendre aux premiers abords,
         heureusement avec le temps j'ai su me l'approprier sans problème. L'élément le plus fastidieux était pour moi l'affichage des valeur sur un graphe, chose que je n'ai pas réussi à mettre pleinement en place.
@@ -56,11 +55,16 @@
 <section>
     <h3>Raphaël Girard</h3>
     <p>
-
+        Durant la réalisation de la SAé23, j’ai notamment beaucoup été impliqué dans la réalisation de la partie Docker. J’ai beaucoup travaillé pendant les premières semaines sur cette partie, qui comprend la réalisation du Flow Node-Red et la représentation via l’outil Grafana. J’ai poussé la réalisation de cette partie jusqu’au dernière semaine, cherchant à optimiser mon Flow Node-Red et à ajouter différents types de visualisations sur Grafana. 
+        J’ai aussi pris part dans la réalisation du script de récupération de données, réalisé en bash.
+        Dans ce script, j’ai surtout réalisé de l'optimisation,en retirant des parties de code inutiles, et en ajoutant d’autres afin de perfectionner le fonctionnement du script. J’ai aussi réalisé beaucoup de debug sur ce script, en visualisant chaque étape du fonctionnement du script directement dans l’invite de commande.  
+        Les difficultés que j’ai rencontrées ont été principalement liées au script bash. Pour en citer quelques-unes, j’ai dû chercher un moyen, après le scan de la DB, de transformer en tableau tous les noms des capteurs présents, plutôt que de l’avoir sous forme d’une chaîne de caractères, j’ai donc découvert l’utilisation de la variable IFS, qui m’a permit de résoudre ce problème. J’ai aussi rencontré des problèmes avec ce script lors du scan de la DB elle-même, puisqu’elle retournait aussi la valeur “ID_cap”, alors que la requête MySQL ne demandait que les valeurs contenues dans “ID_cap”. 
+        Lors de la réalisation de la partie Docker, je n’ai pas vraiment rencontré de problèmes. J’ai pu réaliser cette partie sans avoir à me confronter à des blocages ou à avoir à demander de l’aide à qui que ce soit.
+        
     </p>
 </section>
 <section>
-    <h3> Halidi Daniel </h3>
+    <h3>Daniel Halidi</h3>
     <p>
         J’ai eu des difficultés pour la mise en place des formulaires avec un menu deroulant ducoup j’ai effectué des recherches sur internet et j’ai modifié le style de la page pour permettre une meilleure ergonomie des formulaires. J’ai eu aussi quelques difficultés pour la page de connexion au niveau du CSS afin de centrer la boite de connexion mais en faisant un fichier css a part j’ai pu régler tout les petits soucis 
     </p>

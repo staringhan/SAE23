@@ -7,9 +7,8 @@
   <meta name="description" content="SAE 23, Accueil">
   <meta name="keywords" content="HTML, CSS">
   <link rel="stylesheet" type="text/css" href="../styles/style23.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="../styles/tableau.css" media="screen">
-
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

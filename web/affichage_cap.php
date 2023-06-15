@@ -19,6 +19,7 @@ if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
   <meta name="keywords" content="HTML, CSS">
   <link rel="stylesheet" type="text/css" href="../styles/style23.css" media="screen">
   <link rel="stylesheet" type="text/css" href="../styles/tableau.css" media="screen">
+  <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
   <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 
