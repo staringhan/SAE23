@@ -22,7 +22,7 @@ $mdp = hash('sha256', $mdp);
 
 // Insert the values into the database
 $sql ="INSERT INTO batiment (`ID-bat`, nom, login, mdp) VALUES ('$ID_bat', '$nom', '$login', '$mdp')";
-$result = $con->query($sql);
+$result = mysqli_query($con, $sql);
 
 
 //close the connection

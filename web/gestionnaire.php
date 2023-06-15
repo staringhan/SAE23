@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['gestionnaire']) || $_SESSION['gestionnaire'] !== true) {
     // sebd ab alert saying that the user is not connected and redirect to index.php;
     echo "<script>alert('Vous n\'êtes pas connecté en tant que gestionnaire')</script>";
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 
 
