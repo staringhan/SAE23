@@ -1,0 +1,507 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b41664746d885502",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "MQTT",
+        "topic": "Student/by-room/E208/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e6a546de0e3257fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "e1540ff297611eba",
+                "a617f78185f95ce3"
+            ]
+        ]
+    },
+    {
+        "id": "f1f83d3ae746b0e2",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "d1a7417230fad1dd",
+        "name": "SAE23db",
+        "measurement": "temperature,building=E,room=E208",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 680,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5372bc8120f8117a",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "MQTT",
+        "topic": "Student/by-room/E101/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e6a546de0e3257fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "661bc0accee6b0c9",
+                "a617f78185f95ce3"
+            ]
+        ]
+    },
+    {
+        "id": "445aa1b1727c4672",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "d1a7417230fad1dd",
+        "name": "SAE23db",
+        "measurement": "temperature,building=E,room=E101",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "661bc0accee6b0c9",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload[0].temperature)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 200,
+        "wires": [
+            [
+                "445aa1b1727c4672",
+                "baa46b267951ce87"
+            ]
+        ]
+    },
+    {
+        "id": "ef146101b6113fa7",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "MQTT",
+        "topic": "Student/by-room/amphi1/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e6a546de0e3257fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "b5207ddfd1bafbd3",
+                "a617f78185f95ce3"
+            ]
+        ]
+    },
+    {
+        "id": "38a77974a66d65bf",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "d1a7417230fad1dd",
+        "name": "SAE23db",
+        "measurement": "temperature,building=A,room=amphi1",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 680,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "698e4ea2ad7a9f09",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "MQTT",
+        "topic": "Student/by-room/Salle-conseil/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e6a546de0e3257fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "e18a813d84dce22c",
+                "a617f78185f95ce3"
+            ]
+        ]
+    },
+    {
+        "id": "7cb0ef5f01daad8b",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "d1a7417230fad1dd",
+        "name": "SAE23db",
+        "measurement": "temperature,building=A,room=Salle-conseil",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 680,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e1540ff297611eba",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload[0].temperature)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "f1f83d3ae746b0e2",
+                "baa46b267951ce87"
+            ]
+        ]
+    },
+    {
+        "id": "b5207ddfd1bafbd3",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload[0].temperature)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 300,
+        "wires": [
+            [
+                "38a77974a66d65bf",
+                "baa46b267951ce87"
+            ]
+        ]
+    },
+    {
+        "id": "e18a813d84dce22c",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload[0].temperature)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "7cb0ef5f01daad8b",
+                "baa46b267951ce87"
+            ]
+        ]
+    },
+    {
+        "id": "a617f78185f95ce3",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "temp",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "baa46b267951ce87",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "temp",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "79ab55d0627eb6d2",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "MQTT",
+        "topic": "Student/by-room/E208/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e6a546de0e3257fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 500,
+        "wires": [
+            [
+                "0655972fd5761b23"
+            ]
+        ]
+    },
+    {
+        "id": "960feef63acd020e",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "d1a7417230fad1dd",
+        "name": "SAE23db",
+        "measurement": "humidity,building=E,room=E208",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 680,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "0655972fd5761b23",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload[0].humidity)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "960feef63acd020e",
+                "67c11e3ab1763178"
+            ]
+        ]
+    },
+    {
+        "id": "4daf893b14f90fa6",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "MQTT",
+        "topic": "Student/by-room/E101/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e6a546de0e3257fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 600,
+        "wires": [
+            [
+                "e15b76d69a640ec1"
+            ]
+        ]
+    },
+    {
+        "id": "62556b9aac330551",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "d1a7417230fad1dd",
+        "name": "SAE23db",
+        "measurement": "humidity,building=E,room=E101",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 680,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e15b76d69a640ec1",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload[0].humidity)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 600,
+        "wires": [
+            [
+                "62556b9aac330551",
+                "67c11e3ab1763178"
+            ]
+        ]
+    },
+    {
+        "id": "67c11e3ab1763178",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "temp_hum",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "e6a546de0e3257fc",
+        "type": "mqtt-broker",
+        "name": "IUT",
+        "broker": "mqtt.iut-blagnac.fr",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d1a7417230fad1dd",
+        "type": "influxdb",
+        "hostname": "172.17.0.4",
+        "port": "8086",
+        "protocol": "http",
+        "database": "SAE23",
+        "name": "SAE23",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    }
+]

@@ -1,0 +1,7 @@
+administrateur
+    login : root
+    pass : root
+
+gestionnaire
+    login : batb
+    pass : batb
